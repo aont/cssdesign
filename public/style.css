@@ -17,6 +17,8 @@
   --logs-bg: #f8fafc;
   --logs-text: #1a202c;
   --logs-shadow: inset 0 0 8px rgba(0,0,0,0.08);
+  --modal-bg: #ffffff;
+  --modal-text: #000000;
 
   --success: #48bb78;
   --failure: #f56565;
@@ -35,6 +37,8 @@
     --logs-bg: #1a202c;
     --logs-text: #edf2f7;
     --logs-shadow: inset 0 0 8px rgba(0,0,0,0.4);
+    --modal-bg: #000000;
+    --modal-text: #ffffff;
   }
 }
 
@@ -49,6 +53,8 @@ body[data-theme='dark'] {
   --logs-bg: #1a202c;
   --logs-text: #edf2f7;
   --logs-shadow: inset 0 0 8px rgba(0,0,0,0.4);
+  --modal-bg: #000000;
+  --modal-text: #ffffff;
 }
 
 body[data-theme='light'] {
@@ -62,6 +68,8 @@ body[data-theme='light'] {
   --logs-bg: #f8fafc;
   --logs-text: #1a202c;
   --logs-shadow: inset 0 0 8px rgba(0,0,0,0.08);
+  --modal-bg: #ffffff;
+  --modal-text: #000000;
 }
 
 body {
@@ -248,7 +256,8 @@ a.button:active {
 }
 
 .modal-content {
-  background: #fff;
+  background: var(--modal-bg);
+  color: var(--modal-text);
   border-radius: 16px;
   padding: 1.5rem 2rem;
   max-width: 420px;
