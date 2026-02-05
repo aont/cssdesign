@@ -14,8 +14,9 @@
   --btn-secondary: #4a5568;
   --btn-secondary-hover: #2d3748;
 
-  --logs-bg: #1a202c;
-  --logs-text: #edf2f7;
+  --logs-bg: #f8fafc;
+  --logs-text: #1a202c;
+  --logs-shadow: inset 0 0 8px rgba(0,0,0,0.08);
 
   --success: #48bb78;
   --failure: #f56565;
@@ -31,6 +32,9 @@
     --input-border: #4a5568;
     --subtle: #cbd5e0;
     --shadow: 0 8px 30px rgba(0,0,0,0.55);
+    --logs-bg: #1a202c;
+    --logs-text: #edf2f7;
+    --logs-shadow: inset 0 0 8px rgba(0,0,0,0.4);
   }
 }
 
@@ -42,6 +46,9 @@ body[data-theme='dark'] {
   --input-border: #4a5568;
   --subtle: #cbd5e0;
   --shadow: 0 8px 30px rgba(0,0,0,0.55);
+  --logs-bg: #1a202c;
+  --logs-text: #edf2f7;
+  --logs-shadow: inset 0 0 8px rgba(0,0,0,0.4);
 }
 
 body[data-theme='light'] {
@@ -52,6 +59,9 @@ body[data-theme='light'] {
   --input-border: #ccc;
   --subtle: #4a5568;
   --shadow: 0 4px 18px rgba(0,0,0,0.1);
+  --logs-bg: #f8fafc;
+  --logs-text: #1a202c;
+  --logs-shadow: inset 0 0 8px rgba(0,0,0,0.08);
 }
 
 body {
@@ -149,7 +159,7 @@ a.button:active {
   border-radius: 10px;
   background: var(--logs-bg);
   color: var(--logs-text);
-  box-shadow: inset 0 0 8px rgba(0,0,0,0.4);
+  box-shadow: var(--logs-shadow);
 }
 
 .logs.success { border: 2px solid var(--success); }
