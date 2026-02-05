@@ -62,13 +62,23 @@
         <p class="subtle">This sample is visual-only (no dynamic behavior).</p>
       </section>
 
-      <!-- 5) hidden group example -->
+      <!-- 5) checkbox group sample -->
+      <section>
+        <label>Notification Preferences</label>
+        <div class="toggle-group" role="group" aria-label="Notification Preferences">
+          <label><input type="checkbox" name="notify_email" value="email" checked /> Email</label>
+          <label><input type="checkbox" name="notify_sms" value="sms" /> SMS</label>
+          <label><input type="checkbox" name="notify_push" value="push" /> Push</label>
+        </div>
+      </section>
+
+      <!-- 6) hidden group example -->
       <section class="hidden">
         <label for="hidden_field">Hidden Field (example)</label>
         <input type="text" id="hidden_field" name="hidden_field" />
       </section>
 
-      <!-- 6) simple text input -->
+      <!-- 7) simple text input -->
       <section>
         <label for="reference_id">Reference ID</label>
         <input type="text" id="reference_id" name="reference_id" placeholder="e.g., 12345" />
