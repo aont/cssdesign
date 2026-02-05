@@ -225,5 +225,23 @@ Sample log line 2</pre>
       </div>
     </div>
   </div>
+
+  <script>
+    const DAY_START_HOUR = 6;
+    const NIGHT_START_HOUR = 18;
+    const THEME_ATTRIBUTE = 'data-theme';
+
+    function getThemeForCurrentHour(date = new Date()) {
+      const hour = date.getHours();
+      return hour >= DAY_START_HOUR && hour < NIGHT_START_HOUR ? 'day' : 'night';
+    }
+
+    function applyTimeBasedTheme() {
+      document.body.setAttribute(THEME_ATTRIBUTE, getThemeForCurrentHour());
+    }
+
+    applyTimeBasedTheme();
+    setInterval(applyTimeBasedTheme, 60 * 1000);
+  </script>
 </body>
 </html>
