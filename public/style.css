@@ -128,10 +128,10 @@ input[type=text], textarea, select {
 select {
   appearance: none;
   -webkit-appearance: none;
-  padding: 0.6rem 2.2rem 0.6rem 0.8rem;
+  padding: 0.55rem 1.5rem 0.55rem 0.75rem;
   background-repeat: no-repeat;
-  background-position: right 0.8rem center;
-  background-size: 12px 12px;
+  background-position: right 0.2rem center;
+  background-size: 32px 32px;
   background-image: var(--select-caret);
 }
 
