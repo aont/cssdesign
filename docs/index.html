@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UI Components Design Sample</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <h1>UI Components — Design Sample</h1>
+    <p>This is a static page showcasing the available UI components and layout patterns.</p>
+
+    <form action="#" method="post" novalidate>
+      <!-- 1) field-header + label + secondary link-button -->
+      <section>
+        <div class="field-header">
+          <label for="resource_url">Resource URL</label>
+          <a class="button secondary" href="#" target="_blank" rel="noopener">Open Resource</a>
+        </div>
+
+        <!-- 2) field-group + input + datalist -->
+        <div class="field-group">
+          <input
+            type="text"
+            id="resource_url"
+            name="resource_url"
+            placeholder="https://example.com/resource"
+            list="resource_history"
+            required
+          />
+        </div>
+        <datalist id="resource_history">
+          <option value="https://example.com/resource/alpha"></option>
+          <option value="https://example.com/resource/beta"></option>
+        </datalist>
+        <p class="subtle">Datalist suggestions appear as browser-native autocomplete options.</p>
+      </section>
+
+      <!-- 3) label + input + datalist -->
+      <section>
+        <label for="category">Category</label>
+        <input type="text" id="category" name="category" placeholder="General" list="category_history" />
+        <datalist id="category_history">
+          <option value="General"></option>
+          <option value="Billing"></option>
+          <option value="Support"></option>
+        </datalist>
+      </section>
+
+      <!-- 4) toggle-group (radio group) + subtle text -->
+      <section>
+        <label>Display Mode</label>
+        <div class="toggle-group" role="radiogroup" aria-label="Display Mode">
+          <label><input type="radio" name="display_mode" value="standard" checked /> Standard</label>
+          <label><input type="radio" name="display_mode" value="compact" /> Compact</label>
+          <label><input type="radio" name="display_mode" value="expanded" /> Expanded</label>
+        </div>
+        <p class="subtle">This sample is visual-only (no dynamic behavior).</p>
+      </section>
+
+      <!-- 5) hidden group example -->
+      <section class="hidden">
+        <label for="hidden_field">Hidden Field (example)</label>
+        <input type="text" id="hidden_field" name="hidden_field" />
+      </section>
+
+      <!-- 6) simple text input -->
+      <section>
+        <label for="reference_id">Reference ID</label>
+        <input type="text" id="reference_id" name="reference_id" placeholder="e.g., 12345" />
+      </section>
+
+      <!-- 7) select -->
+      <section>
+        <label for="assignee">Assignee</label>
+        <select id="assignee" name="assignee">
+          <option value="">Select a person...</option>
+          <option value="0">Alex Johnson</option>
+          <option value="1">Taylor Smith</option>
+        </select>
+      </section>
+
+      <!-- 8) field-header + field-header-actions -->
+      <section>
+        <div class="field-header">
+          <label for="description">Description</label>
+
+          <div class="field-header-actions">
+            <button type="button" class="button secondary">Paste</button>
+            <button type="button" class="button secondary">Generate Template</button>
+            <a class="button secondary" href="#" target="_blank" rel="noopener noreferrer">Open Helper</a>
+          </div>
+        </div>
+
+        <textarea id="description" name="description" placeholder="Write a short description..."></textarea>
+      </section>
+
+      <!-- 9) checkbox -->
+      <section>
+        <label>
+          <input type="checkbox" id="include_details" name="include_details" value="true" />
+          Include additional details
+        </label>
+      </section>
+
+      <!-- 10) select -->
+      <section>
+        <label for="profile">Profile</label>
+        <select id="profile" name="profile">
+          <option value="">Select a profile...</option>
+          <option value="0">Default</option>
+          <option value="1">High Contrast</option>
+        </select>
+      </section>
+
+      <!-- 11) textarea + secondary button in header -->
+      <section>
+        <div class="field-header">
+          <label for="content">Content</label>
+          <button type="button" class="button secondary">Paste</button>
+        </div>
+        <textarea id="content" name="content" placeholder="Paste or type content here..."></textarea>
+      </section>
+
+      <!-- 12) textarea -->
+      <section>
+        <label for="notes">Notes</label>
+        <textarea id="notes" name="notes" placeholder="Optional notes..."></textarea>
+      </section>
+
+      <!-- 13) status pills + action buttons + subtle -->
+      <section>
+        <div class="field-header">
+          <label for="service_url">Service URL</label>
+
+          <div class="field-header-actions">
+            <span class="status-pill">inactive</span>
+            <span class="status-pill connected">active</span>
+            <span class="status-pill error">error</span>
+
+            <button type="button" class="button secondary">Activate</button>
+            <button type="button" class="button secondary">Deactivate</button>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <input type="text" id="service_url" name="service_url" placeholder="https://example.com/api" />
+        </div>
+        <p class="subtle">Use this section to preview status pills and compact action buttons.</p>
+      </section>
+
+      <!-- 14) buttons (primary/disabled/secondary) + modal triggers -->
+      <section class="field-group">
+        <button type="button" class="button">Primary Action</button>
+        <button type="button" class="button" disabled>Disabled Primary</button>
+        <button type="button" class="button secondary">Secondary Action</button>
+
+        <button
+          type="button"
+          class="button secondary"
+          onclick="document.querySelector('#modal_success')?.classList.remove('hidden')"
+        >
+          Show “Request Succeeded”
+        </button>
+
+        <button
+          type="button"
+          class="button secondary"
+          onclick="document.querySelector('#modal_failure')?.classList.remove('hidden')"
+        >
+          Show “Request Failed”
+        </button>
+      </section>
+    </form>
+
+    <!-- 15) logs (neutral/success/failure) -->
+    <section class="logs neutral">
+      <div class="field-header">
+        <h2>Logs (neutral)</h2>
+        <button type="button" class="button secondary">Clear logs</button>
+      </div>
+      <pre>Sample log line 1
+Sample log line 2</pre>
+    </section>
+
+    <section class="logs success">
+      <div class="field-header">
+        <h2>Success</h2>
+        <button type="button" class="button secondary">Clear logs</button>
+      </div>
+      <pre>Operation completed successfully.</pre>
+    </section>
+
+    <section class="logs failure">
+      <div class="field-header">
+        <h2>Failure</h2>
+        <button type="button" class="button secondary">Clear logs</button>
+      </div>
+      <pre>Error: Something went wrong.</pre>
+    </section>
+  </main>
+
+  <!-- 16) modals -->
+  <div class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="success_title" id="modal_success">
+    <div class="modal-content success" role="document">
+      <h2 id="success_title">Request Succeeded</h2>
+      <p>Your request has finished.</p>
+      <div class="modal-actions">
+        <button type="button" class="button" onclick="document.querySelector('#modal_success')?.classList.add('hidden')">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="failure_title" id="modal_failure">
+    <div class="modal-content failure" role="document">
+      <h2 id="failure_title">Request Failed</h2>
+      <p>There were errors. Review the logs for details.</p>
+      <div class="modal-actions">
+        <button type="button" class="button" onclick="document.querySelector('#modal_failure')?.classList.add('hidden')">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
