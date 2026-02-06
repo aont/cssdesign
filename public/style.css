@@ -45,7 +45,7 @@
   }
 }
 
-body[data-theme='dark'] {
+.theme-root[data-theme='dark'] {
   --bg: #000000;
   --panel-bg: #111111;
   --text: #f7fafc;
@@ -61,7 +61,7 @@ body[data-theme='dark'] {
   --select-caret-icon: var(--select-caret-icon-dark);
 }
 
-body[data-theme='light'] {
+.theme-root[data-theme='light'] {
   --bg: #ffffff;
   --panel-bg: #ffffff;
   --text: #222;
@@ -76,14 +76,14 @@ body[data-theme='light'] {
   --modal-text: #000000;
 }
 
-body {
+.page-body {
   font-family: system-ui, sans-serif;
   margin: 2rem;
   background: var(--bg);
   color: var(--text);
 }
 
-main {
+.page-main {
   max-width: 960px;
   margin: 0 auto;
   background: var(--panel-bg);
@@ -100,22 +100,24 @@ main {
   gap: 1rem;
 }
 
-.page-header h1 {
+.page-header .page-title {
   margin: 0;
 }
-form {
+.design-form {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
 }
 
-label {
+.form-label {
   font-weight: 600;
   display: block;
   margin-bottom: 0.5rem;
 }
 
-input[type=text], textarea, select {
+.form-input-text,
+.form-textarea,
+.form-select {
   width: 100%;
   padding: 0.75rem;
   border: 1px solid var(--input-border);
@@ -125,7 +127,7 @@ input[type=text], textarea, select {
   color: var(--text);
 }
 
-select {
+.form-select {
   appearance: none;
   -webkit-appearance: none;
   padding: 0.55rem 1.5rem 0.55rem 0.75rem;
@@ -135,13 +137,13 @@ select {
   background-image: var(--select-caret-icon);
 }
 
-textarea {
+.form-textarea {
   min-height: 220px;
 }
 
 
-input[type='radio'],
-input[type='checkbox'] {
+.form-input-radio,
+.form-input-checkbox {
   accent-color: var(--btn-primary);
 }
 
@@ -174,10 +176,10 @@ input[type='checkbox'] {
   opacity: 0.6;
 }
 
-a.button,
-a.button:hover,
-a.button:visited,
-a.button:active {
+.button-link,
+.button-link:hover,
+.button-link:visited,
+.button-link:active {
   text-decoration: none;
 }
 
@@ -194,7 +196,7 @@ a.button:active {
 .logs.failure { border: 2px solid var(--failure); }
 .logs.neutral { border: 2px solid var(--neutral); }
 
-.logs pre {
+.logs-pre {
   margin: 0;
   white-space: pre-wrap;
 }
@@ -212,7 +214,7 @@ a.button:active {
   align-items: center;
 }
 
-.toggle-group label {
+.toggle-group .toggle-label {
   font-weight: 500;
   margin-bottom: 0;
 }

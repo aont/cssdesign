@@ -6,25 +6,26 @@
   <title>UI Components Design Sample</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <main>
+<body class="theme-root page-body">
+  <main class="page-main">
     <div class="page-header">
-      <h1>UI Components — Design Sample</h1>
+      <h1 class="page-title">UI Components — Design Sample</h1>
       <button type="button" class="button secondary" id="theme_toggle" aria-live="polite">Theme: Auto</button>
     </div>
     <p>This is a static page showcasing the available UI components and layout patterns.</p>
 
-    <form action="#" method="post" novalidate>
+    <form class="design-form" action="#" method="post" novalidate>
       <!-- 1) field-header + label + secondary link-button -->
       <section>
         <div class="field-header">
-          <label for="resource_url">Resource URL</label>
-          <a class="button secondary" href="#" target="_blank" rel="noopener">Open Resource</a>
+          <label class="form-label" for="resource_url">Resource URL</label>
+          <a class="button button-link secondary" href="#" target="_blank" rel="noopener">Open Resource</a>
         </div>
 
         <!-- 2) field-group + input + datalist -->
         <div class="field-group">
           <input
+            class="form-input-text"
             type="text"
             id="resource_url"
             name="resource_url"
@@ -42,8 +43,8 @@
 
       <!-- 3) label + input + datalist -->
       <section>
-        <label for="category">Category</label>
-        <input type="text" id="category" name="category" placeholder="General" list="category_history" />
+        <label class="form-label" for="category">Category</label>
+        <input class="form-input-text" type="text" id="category" name="category" placeholder="General" list="category_history" />
         <datalist id="category_history">
           <option value="General"></option>
           <option value="Billing"></option>
@@ -53,41 +54,41 @@
 
       <!-- 4) toggle-group (radio group) + subtle text -->
       <section>
-        <label>Display Mode</label>
+        <label class="form-label">Display Mode</label>
         <div class="toggle-group" role="radiogroup" aria-label="Display Mode">
-          <label><input type="radio" name="display_mode" value="standard" checked /> Standard</label>
-          <label><input type="radio" name="display_mode" value="compact" /> Compact</label>
-          <label><input type="radio" name="display_mode" value="expanded" /> Expanded</label>
+          <label class="toggle-label"><input class="form-input-radio" type="radio" name="display_mode" value="standard" checked /> Standard</label>
+          <label class="toggle-label"><input class="form-input-radio" type="radio" name="display_mode" value="compact" /> Compact</label>
+          <label class="toggle-label"><input class="form-input-radio" type="radio" name="display_mode" value="expanded" /> Expanded</label>
         </div>
         <p class="subtle">This sample is visual-only (no dynamic behavior).</p>
       </section>
 
       <!-- 5) checkbox group sample -->
       <section>
-        <label>Notification Preferences</label>
+        <label class="form-label">Notification Preferences</label>
         <div class="toggle-group" role="group" aria-label="Notification Preferences">
-          <label><input type="checkbox" name="notify_email" value="email" checked /> Email</label>
-          <label><input type="checkbox" name="notify_sms" value="sms" /> SMS</label>
-          <label><input type="checkbox" name="notify_push" value="push" /> Push</label>
+          <label class="toggle-label"><input class="form-input-checkbox" type="checkbox" name="notify_email" value="email" checked /> Email</label>
+          <label class="toggle-label"><input class="form-input-checkbox" type="checkbox" name="notify_sms" value="sms" /> SMS</label>
+          <label class="toggle-label"><input class="form-input-checkbox" type="checkbox" name="notify_push" value="push" /> Push</label>
         </div>
       </section>
 
       <!-- 6) hidden group example -->
       <section class="hidden">
-        <label for="hidden_field">Hidden Field (example)</label>
-        <input type="text" id="hidden_field" name="hidden_field" />
+        <label class="form-label" for="hidden_field">Hidden Field (example)</label>
+        <input class="form-input-text" type="text" id="hidden_field" name="hidden_field" />
       </section>
 
       <!-- 7) simple text input -->
       <section>
-        <label for="reference_id">Reference ID</label>
-        <input type="text" id="reference_id" name="reference_id" placeholder="e.g., 12345" />
+        <label class="form-label" for="reference_id">Reference ID</label>
+        <input class="form-input-text" type="text" id="reference_id" name="reference_id" placeholder="e.g., 12345" />
       </section>
 
       <!-- 7) select -->
       <section>
-        <label for="assignee">Assignee</label>
-        <select id="assignee" name="assignee">
+        <label class="form-label" for="assignee">Assignee</label>
+        <select class="form-select" id="assignee" name="assignee">
           <option value="">Select a person...</option>
           <option value="0">Alex Johnson</option>
           <option value="1">Taylor Smith</option>
@@ -97,30 +98,30 @@
       <!-- 8) field-header + field-header-actions -->
       <section>
         <div class="field-header">
-          <label for="description">Description</label>
+          <label class="form-label" for="description">Description</label>
 
           <div class="field-header-actions">
             <button type="button" class="button secondary">Paste</button>
             <button type="button" class="button secondary">Generate Template</button>
-            <a class="button secondary" href="#" target="_blank" rel="noopener noreferrer">Open Helper</a>
+            <a class="button button-link secondary" href="#" target="_blank" rel="noopener noreferrer">Open Helper</a>
           </div>
         </div>
 
-        <textarea id="description" name="description" placeholder="Write a short description..."></textarea>
+        <textarea class="form-textarea" id="description" name="description" placeholder="Write a short description..."></textarea>
       </section>
 
       <!-- 9) checkbox -->
       <section>
-        <label>
-          <input type="checkbox" id="include_details" name="include_details" value="true" />
+        <label class="form-label">
+          <input class="form-input-checkbox" type="checkbox" id="include_details" name="include_details" value="true" />
           Include additional details
         </label>
       </section>
 
       <!-- 10) select -->
       <section>
-        <label for="profile">Profile</label>
-        <select id="profile" name="profile">
+        <label class="form-label" for="profile">Profile</label>
+        <select class="form-select" id="profile" name="profile">
           <option value="">Select a profile...</option>
           <option value="0">Default</option>
           <option value="1">High Contrast</option>
@@ -130,22 +131,22 @@
       <!-- 11) textarea + secondary button in header -->
       <section>
         <div class="field-header">
-          <label for="content">Content</label>
+          <label class="form-label" for="content">Content</label>
           <button type="button" class="button secondary">Paste</button>
         </div>
-        <textarea id="content" name="content" placeholder="Paste or type content here..."></textarea>
+        <textarea class="form-textarea" id="content" name="content" placeholder="Paste or type content here..."></textarea>
       </section>
 
       <!-- 12) textarea -->
       <section>
-        <label for="notes">Notes</label>
-        <textarea id="notes" name="notes" placeholder="Optional notes..."></textarea>
+        <label class="form-label" for="notes">Notes</label>
+        <textarea class="form-textarea" id="notes" name="notes" placeholder="Optional notes..."></textarea>
       </section>
 
       <!-- 13) status pills + action buttons + subtle -->
       <section>
         <div class="field-header">
-          <label for="service_url">Service URL</label>
+          <label class="form-label" for="service_url">Service URL</label>
 
           <div class="field-header-actions">
             <span class="status-pill">inactive</span>
@@ -158,7 +159,7 @@
         </div>
 
         <div class="field-group">
-          <input type="text" id="service_url" name="service_url" placeholder="https://example.com/api" />
+          <input class="form-input-text" type="text" id="service_url" name="service_url" placeholder="https://example.com/api" />
         </div>
         <p class="subtle">Use this section to preview status pills and compact action buttons.</p>
       </section>
@@ -193,7 +194,7 @@
         <h2>Logs (neutral)</h2>
         <button type="button" class="button secondary">Clear logs</button>
       </div>
-      <pre>Sample log line 1
+      <pre class="logs-pre">Sample log line 1
 Sample log line 2</pre>
     </section>
 
@@ -202,7 +203,7 @@ Sample log line 2</pre>
         <h2>Success</h2>
         <button type="button" class="button secondary">Clear logs</button>
       </div>
-      <pre>Operation completed successfully.</pre>
+      <pre class="logs-pre">Operation completed successfully.</pre>
     </section>
 
     <section class="logs failure">
@@ -210,7 +211,7 @@ Sample log line 2</pre>
         <h2>Failure</h2>
         <button type="button" class="button secondary">Clear logs</button>
       </div>
-      <pre>Error: Something went wrong.</pre>
+      <pre class="logs-pre">Error: Something went wrong.</pre>
     </section>
   </main>
 
