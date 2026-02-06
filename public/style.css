@@ -247,6 +247,10 @@
   gap: 0.75rem;
 }
 
+.logs .field-header h2 {
+  margin: 0;
+}
+
 .field-header-actions {
   display: flex;
   align-items: center;
