@@ -41,17 +41,6 @@
         <p class="subtle">Datalist suggestions appear as browser-native autocomplete options.</p>
       </section>
 
-      <!-- 3) label + input + datalist -->
-      <section>
-        <label class="form-label" for="category">Category</label>
-        <input class="form-input-text" type="text" id="category" name="category" placeholder="General" list="category_history" />
-        <datalist id="category_history">
-          <option value="General"></option>
-          <option value="Billing"></option>
-          <option value="Support"></option>
-        </datalist>
-      </section>
-
       <!-- 4) toggle-group (radio group) + subtle text -->
       <section>
         <label class="form-label">Display Mode</label>
@@ -79,12 +68,6 @@
         <input class="form-input-text" type="text" id="hidden_field" name="hidden_field" />
       </section>
 
-      <!-- 7) simple text input -->
-      <section>
-        <label class="form-label" for="reference_id">Reference ID</label>
-        <input class="form-input-text" type="text" id="reference_id" name="reference_id" placeholder="e.g., 12345" />
-      </section>
-
       <!-- 7) select -->
       <section>
         <label class="form-label" for="assignee">Assignee</label>
@@ -108,39 +91,6 @@
         </div>
 
         <textarea class="form-textarea" id="description" name="description" placeholder="Write a short description..."></textarea>
-      </section>
-
-      <!-- 9) checkbox -->
-      <section>
-        <label class="form-label">
-          <input class="form-input-checkbox" type="checkbox" id="include_details" name="include_details" value="true" />
-          Include additional details
-        </label>
-      </section>
-
-      <!-- 10) select -->
-      <section>
-        <label class="form-label" for="profile">Profile</label>
-        <select class="form-select" id="profile" name="profile">
-          <option value="">Select a profile...</option>
-          <option value="0">Default</option>
-          <option value="1">High Contrast</option>
-        </select>
-      </section>
-
-      <!-- 11) textarea + secondary button in header -->
-      <section>
-        <div class="field-header">
-          <label class="form-label" for="content">Content</label>
-          <button type="button" class="button secondary">Paste</button>
-        </div>
-        <textarea class="form-textarea" id="content" name="content" placeholder="Paste or type content here..."></textarea>
-      </section>
-
-      <!-- 12) textarea -->
-      <section>
-        <label class="form-label" for="notes">Notes</label>
-        <textarea class="form-textarea" id="notes" name="notes" placeholder="Optional notes..."></textarea>
       </section>
 
       <!-- 13) status pills + action buttons + subtle -->
