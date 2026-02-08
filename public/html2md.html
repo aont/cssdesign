@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HTML → Markdown Converter (Static Design)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="theme-root page-body">
+  <main class="page-main">
+    <header class="page-header">
+      <div>
+        <h1 class="page-title">HTML → Markdown Conversion</h1>
+        <p class="subtle lead-text">https://aont.github.io/html2md/ を JavaScript なしの静的プレビューとして再構成しています。</p>
+      </div>
+      <span class="ui-badge" aria-label="Visual style">
+        <span class="ui-dot" aria-hidden="true"></span>
+        Static UI Preview
+      </span>
+    </header>
+
+    <section class="preview-card" aria-labelledby="toolbar-title">
+      <div class="preview-card-header">
+        <h2 class="preview-card-title" id="toolbar-title">Toolbar / Status States</h2>
+      </div>
+      <div class="preview-card-body preview-stack-md">
+        <div class="state-grid state-grid-2">
+          <div class="action-toolbar">
+            <button type="button" class="button secondary">Paste (clipboard → A)</button>
+            <button type="button" class="button">Convert (A → Markdown → B)</button>
+            <button type="button" class="button secondary">Copy (B → clipboard)</button>
+            <span class="status-pill">ready</span>
+          </div>
+          <div class="action-toolbar">
+            <button type="button" class="button secondary" disabled>Paste (clipboard → A)</button>
+            <button type="button" class="button" disabled>Convert (A → Markdown → B)</button>
+            <button type="button" class="button secondary" disabled>Copy (B → clipboard)</button>
+            <span class="status-pill connected">converted</span>
+            <span class="status-pill error">clipboard unavailable</span>
+          </div>
+        </div>
+        <p class="subtle">ボタン有効/無効とステータス（通常・成功・エラー）を同時表示しています。</p>
+      </div>
+    </section>
+
+    <section class="preview-card" aria-labelledby="editor-title">
+      <div class="preview-card-header">
+        <h2 class="preview-card-title" id="editor-title">Textarea Panels</h2>
+      </div>
+      <div class="preview-card-body">
+        <div class="field-group field-group-wide">
+          <article class="panel-block preview-stack-sm">
+            <label class="form-label" for="taHtml">Textarea (A): HTML</label>
+            <textarea id="taHtml" class="form-textarea" placeholder="Click Paste to insert HTML from the clipboard here."><article>
+  <h2>Release note</h2>
+  <p><strong>Version 1.2.0</strong> adds keyboard shortcuts.</p>
+  <ul>
+    <li>Ctrl + Enter: convert</li>
+    <li>Ctrl + Shift + C: copy markdown</li>
+  </ul>
+</article></textarea>
+            <p class="subtle">If there is no HTML in the clipboard, it will read plain text instead.</p>
+          </article>
+
+          <article class="panel-block preview-stack-sm">
+            <label class="form-label" for="taMd">Textarea (B): Markdown</label>
+            <textarea id="taMd" class="form-textarea" placeholder="Click Convert to output Markdown here.">## Release note
+
+**Version 1.2.0** adds keyboard shortcuts.
+
+- Ctrl + Enter: convert
+- Ctrl + Shift + C: copy markdown</textarea>
+            <p class="subtle">Clipboard API は <code class="inline-code">https</code> または <code class="inline-code">localhost</code> で利用します。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="preview-card" aria-labelledby="log-title">
+      <div class="preview-card-header">
+        <h2 class="preview-card-title" id="log-title">Log States</h2>
+      </div>
+      <div class="preview-card-body">
+        <div class="state-grid state-grid-3">
+          <article class="logs neutral">
+            <pre class="logs-pre">Ready: waiting for input.</pre>
+          </article>
+          <article class="logs success">
+            <pre class="logs-pre">Conversion complete: 426 chars of HTML converted to 201 chars of Markdown.</pre>
+          </article>
+          <article class="logs failure">
+            <pre class="logs-pre">Error: navigator.clipboard is not available. Use HTTPS or localhost.</pre>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
