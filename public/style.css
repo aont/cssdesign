@@ -708,3 +708,85 @@ kbd {
   font-size: 0.78rem;
   background: var(--input-bg);
 }
+
+.memo-layout-header {
+  display: grid;
+  gap: 1rem;
+}
+
+.memo-layout-main {
+  display: grid;
+  grid-template-columns: minmax(220px, 300px) minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.memo-api-input {
+  width: min(320px, 100%);
+}
+
+.memo-sidebar .preview-card-body {
+  padding-top: 0.75rem;
+}
+
+.memo-item {
+  width: 100%;
+  text-align: left;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: var(--logs-bg);
+  color: var(--text);
+  padding: 0.65rem 0.75rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.memo-item.active {
+  border-color: var(--btn-primary);
+  background: color-mix(in srgb, var(--btn-primary) 16%, var(--panel-bg));
+  font-weight: 600;
+}
+
+.memo-editor-header {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.memo-editor-header .form-input-text {
+  flex: 1 1 280px;
+}
+
+.memo-search-panel {
+  border: 1px solid var(--input-border);
+  border-radius: 10px;
+  padding: 0.9rem;
+  background: var(--logs-bg);
+}
+
+.memo-content {
+  min-height: 230px;
+}
+
+.history {
+  border-top: 1px solid var(--input-border);
+  padding-top: 1rem;
+}
+
+.history-item {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--input-border);
+  border-radius: 10px;
+  background: var(--logs-bg);
+}
+
+@media (max-width: 880px) {
+  .memo-layout-main {
+    grid-template-columns: 1fr;
+  }
+}
