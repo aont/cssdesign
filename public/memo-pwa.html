@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Memo PWA（Static Design）</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="theme-root page-body">
+  <main class="page-main preview-stack-md">
+    <header class="page-header">
+      <div>
+        <h1 class="page-title">Memo Workspace</h1>
+        <p class="subtle">https://aont.github.io/memo-pwa/index.html を JavaScript なしの静的UIとして取り込んだプレビューです。</p>
+      </div>
+      <span class="ui-badge"><span class="ui-dot" aria-hidden="true"></span>Static UI Preview</span>
+    </header>
+
+    <section class="surface-card preview-stack-md" aria-labelledby="workspace-overview-title">
+      <div class="panel-header-inline">
+        <h2 class="section-title" id="workspace-overview-title">Workspace Controls</h2>
+        <div class="toolbar-row toolbar-row-inline">
+          <button type="button" class="button secondary button-sm">Save API</button>
+          <button type="button" class="button secondary button-sm">New Memo</button>
+          <button type="button" class="button secondary button-sm">Sync</button>
+          <button type="button" class="button secondary button-sm button-danger">Reset Data</button>
+        </div>
+      </div>
+
+      <div class="state-grid state-grid-3">
+        <label class="panel-block">
+          <span class="form-label">API Base</span>
+          <input class="form-input-text" type="url" placeholder="https://api.example.com" value="https://api.example.com" />
+        </label>
+        <p class="status-box success">Sync Status: Online / idle</p>
+        <p class="status-box">Search Status: 2 / 7 matches</p>
+      </div>
+    </section>
+
+    <section class="memo-layout" aria-label="Memo workspace layout preview">
+      <aside class="memo-pane preview-stack-sm">
+        <div class="panel-header-inline">
+          <h2 class="section-heading">My Memos</h2>
+          <span class="ui-badge"><span class="ui-dot" aria-hidden="true"></span>12 items</span>
+        </div>
+        <ul class="item-list">
+          <li class="item-row selected">
+            <strong class="item-title">Daily Notes</strong>
+            <p class="item-meta">Updated: 2026-02-08 09:24</p>
+          </li>
+          <li class="item-row">
+            <strong class="item-title">Project Ideas</strong>
+            <p class="item-meta">Updated: 2026-02-07 22:11</p>
+          </li>
+          <li class="item-row">
+            <strong class="item-title">Shopping</strong>
+            <p class="item-meta">Updated: 2026-02-07 18:02</p>
+          </li>
+        </ul>
+      </aside>
+
+      <section class="memo-pane preview-stack-md">
+        <div class="editor-header-row">
+          <input class="form-input-text" type="text" value="Daily Notes" aria-label="Memo title" />
+          <button type="button" class="button secondary button-sm">Save Version</button>
+          <button type="button" class="button secondary button-sm button-danger">Delete Memo</button>
+        </div>
+
+        <div class="search-grid">
+          <label class="panel-block">
+            <span class="form-label">Find</span>
+            <input class="form-input-text" type="text" value="api" />
+          </label>
+          <label class="panel-block">
+            <span class="form-label">Replace</span>
+            <input class="form-input-text" type="text" value="service" />
+          </label>
+          <label class="toggle-label search-toggle-inline"><input type="checkbox" class="form-input-checkbox" checked /> Case sensitive</label>
+          <div class="toolbar-row">
+            <button type="button" class="button secondary button-sm">Find Next</button>
+            <button type="button" class="button secondary button-sm">Replace</button>
+            <button type="button" class="button secondary button-sm">Replace All</button>
+          </div>
+        </div>
+
+        <textarea class="form-textarea memo-editor" aria-label="Memo content">Write your memo...
+- verify API endpoint
+- update docs
+- share meeting notes</textarea>
+
+        <section class="preview-stack-sm" aria-labelledby="history-title">
+          <h3 class="section-heading" id="history-title">History</h3>
+          <ul class="item-list item-list-compact">
+            <li class="item-row">
+              <strong class="item-title">v12</strong>
+              <p class="item-meta">2026-02-08 09:24</p>
+            </li>
+            <li class="item-row">
+              <strong class="item-title">v11</strong>
+              <p class="item-meta">2026-02-08 08:14</p>
+            </li>
+          </ul>
+        </section>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
