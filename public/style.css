@@ -321,3 +321,99 @@
 .modal-actions .button {
   min-width: 120px;
 }
+
+.preview-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.preview-grid-split {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  align-items: start;
+}
+
+.preview-card {
+  background: var(--panel-bg);
+  border: 1px solid var(--input-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.preview-card-header {
+  padding: 1rem 1rem 0;
+}
+
+.preview-card-title {
+  margin: 0;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--subtle);
+}
+
+.preview-card-body {
+  padding: 1rem;
+}
+
+.preview-stack-sm,
+.preview-stack-md {
+  display: grid;
+}
+
+.preview-stack-sm {
+  gap: 0.5rem;
+}
+
+.preview-stack-md {
+  gap: 1rem;
+}
+
+.ui-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--input-border);
+  color: var(--subtle);
+  font-size: 0.8rem;
+}
+
+.ui-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: var(--btn-primary);
+}
+
+.ui-pill {
+  border: 1px dashed var(--input-border);
+  border-radius: 12px;
+  padding: 0.75rem;
+}
+
+.ui-pill-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.status-box {
+  margin: 0;
+  padding: 0.6rem 0.75rem;
+  border-radius: 10px;
+  border: 1px solid var(--input-border);
+  background: var(--panel-bg);
+  color: var(--subtle);
+  font-size: 0.9rem;
+}
+
+.status-box.success {
+  border-color: var(--success);
+}
+
+.status-box.error {
+  border-color: var(--failure);
+}
