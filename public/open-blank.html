@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Message Link Generator (Static Design)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="theme-root page-body">
+  <main class="page-main">
+    <header class="page-header">
+      <div>
+        <h1 class="page-title">Message Link Generator</h1>
+        <p class="subtle lead-text">メッセージをクエリ文字列付き URL に変換する画面の静的デザインです。JavaScript の挙動を使わず、状態ごとの見た目を同時表示しています。</p>
+      </div>
+      <span class="ui-badge" aria-label="status">
+        <span class="ui-dot" aria-hidden="true"></span>
+        Ready
+      </span>
+    </header>
+
+    <div class="preview-grid preview-stack-md">
+      <section class="preview-card" aria-labelledby="generator-input-title">
+        <div class="preview-card-header">
+          <h2 class="preview-card-title" id="generator-input-title">Input</h2>
+        </div>
+        <div class="preview-card-body preview-stack-md">
+          <label class="form-label" for="msg">Message</label>
+          <textarea class="form-textarea form-textarea-compact" id="msg" placeholder="Type your message here...">Hello from static preview.</textarea>
+
+          <div class="toggle-group">
+            <button class="button" type="button">Generate Link</button>
+            <button class="button secondary" type="button">Copy URL</button>
+            <button class="button secondary" type="button" disabled>Copy URL (disabled)</button>
+          </div>
+
+          <p class="subtle">Tip: メッセージが空の場合は、元ページではブラウザー名 (User-Agent 相当) が表示される想定です。</p>
+        </div>
+      </section>
+
+      <section class="preview-card" aria-labelledby="state-variants-title">
+        <div class="preview-card-header">
+          <h2 class="preview-card-title" id="state-variants-title">State Variants</h2>
+        </div>
+        <div class="preview-card-body preview-stack-md">
+          <div class="state-grid state-grid-2">
+            <div class="ui-pill preview-stack-sm">
+              <h3 class="section-heading">Pop-up hint</h3>
+              <p class="hint-banner">If the pop-up window does not appear, please allow pop-ups for this page.</p>
+            </div>
+            <div class="ui-pill preview-stack-sm">
+              <h3 class="section-heading">Generated link</h3>
+              <p class="subtle">Open this link</p>
+              <a class="preview-link" href="#">open-blank.html?message=Hello%20from%20static%20preview.</a>
+              <p class="inline-code-block">https://example.com/open-blank.html?message=Hello%20from%20static%20preview.</p>
+            </div>
+          </div>
+
+          <div class="state-grid state-grid-3">
+            <div class="toast-banner" role="status" aria-live="polite">
+              <span class="ui-dot" aria-hidden="true"></span>
+              <span>Link generated</span>
+            </div>
+            <div class="toast-banner" role="status" aria-live="polite">
+              <span class="ui-dot" aria-hidden="true"></span>
+              <span>URL copied</span>
+            </div>
+            <div class="toast-banner subtle-surface" role="status" aria-live="polite">
+              <span class="ui-dot" aria-hidden="true"></span>
+              <span>Copied</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
