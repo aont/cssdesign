@@ -218,6 +218,7 @@
 .button-link:hover,
 .button-link:visited,
 .button-link:active {
+  color: #fff;
   text-decoration: none;
 }
 
