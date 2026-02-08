@@ -66,6 +66,10 @@
   a:visited {
     color: #c084fc;
   }
+
+  a.button-link:visited {
+    color: #ffffff;
+  }
 }
 
 .theme-root[data-theme='dark'] {
@@ -96,6 +100,10 @@
 
 .theme-root[data-theme='dark'] a:visited {
   color: #c084fc;
+}
+
+.theme-root[data-theme='dark'] a.button-link:visited {
+  color: #ffffff;
 }
 
 .theme-root[data-theme='light'] {
