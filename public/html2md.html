@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ja">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -11,11 +11,11 @@
   <main>
     <header>
       <h1>HTML → Markdown Conversion (Design Sample)</h1>
-      <p class="lead">このページは見た目確認専用です。JavaScript は使わず、状態ごとの UI を並べています。</p>
+      <p class="lead">This page is for visual checks only. It uses no JavaScript and displays UI for each state.</p>
     </header>
 
     <section>
-      <h2>画面全体レイアウト見本</h2>
+      <h2>Full-Page Layout Sample</h2>
       <form>
         <div class="toolbar" role="group" aria-label="Actions preview">
           <button class="button secondary" type="button">Paste</button>
@@ -29,14 +29,14 @@
             <label>Textarea (A): HTML</label>
             <textarea>&lt;h2&gt;Example heading&lt;/h2&gt;
 &lt;p&gt;Sample HTML for design check.&lt;/p&gt;</textarea>
-            <p class="subtle">クリップボード入力を想定した説明テキスト。</p>
+            <p class="subtle">Description text assuming clipboard input.</p>
           </div>
           <div class="panel">
             <label>Textarea (B): Markdown</label>
             <textarea>## Example heading
 
 Sample HTML for design check.</textarea>
-            <p class="subtle">Clipboard API は <code>https</code> または <code>localhost</code> が必要です。</p>
+            <p class="subtle">The Clipboard API requires <code>https</code> or <code>localhost</code>.</p>
           </div>
         </div>
 
@@ -47,7 +47,7 @@ Sample HTML for design check.</textarea>
     </section>
 
     <section>
-      <h2>状態別コンポーネント見本</h2>
+      <h2>State-Based Component Samples</h2>
       <div class="sample-grid">
         <article class="sample-card">
           <h3>Primary / Secondary Button</h3>
@@ -70,7 +70,7 @@ Sample HTML for design check.</textarea>
             <span class="status-pill ok">converted</span>
             <span class="status-pill error">failed</span>
           </div>
-          <p>実運用時にクラス切り替えされる見た目を固定表示。</p>
+          <p>Fixed display of appearance that would switch classes in production.</p>
         </article>
 
         <article class="sample-card">
