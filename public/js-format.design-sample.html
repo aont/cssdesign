@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Design Sample | JavaScript Minify / Format Tool</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+  <body class="sample-js-format">
+    <div class="container">
+      <h1>JavaScript Minify / Format Tool</h1>
+      <p class="subtitle">デザイン見本ページ（静的モック）。JavaScript機能は実装せず、状態差分を別要素で配置。</p>
+
+      <p class="sectionTitle">メインレイアウト見本</p>
+      <div class="card" aria-label="Main layout sample">
+        <div class="toolbar">
+          <div class="btn primary">Minify ↓</div>
+          <div class="btn primary disabled">Format ↑（disabled）</div>
+          <div class="btn">Swap ⇄</div>
+          <div class="btn danger">Clear</div>
+          <div class="btn ghost small">☀️ White</div>
+        </div>
+
+        <div class="split">
+          <section class="panel">
+            <div class="panelHead">
+              <div class="panelTitle">Input (original / formatted)</div>
+              <div class="panelActions">
+                <div class="btn">Paste</div>
+                <div class="btn">Copy</div>
+              </div>
+            </div>
+            <pre class="mockArea">function hello(name){console.log('Hi, '+name)}</pre>
+          </section>
+
+          <section class="panel">
+            <div class="panelHead">
+              <div class="panelTitle">Output (minified)</div>
+              <div class="panelActions">
+                <div class="btn">Copy</div>
+                <div class="btn">Select</div>
+              </div>
+            </div>
+            <pre class="mockArea">function hello(o){console.log("Hi, "+o)}</pre>
+          </section>
+        </div>
+
+        <div class="footerRow">
+          <div class="hint">Bookmarklet link: <span class="link">bookmarklet</span></div>
+          <div class="hint">Tip: iOS/Safari では長押しでブックマークへ追加。</div>
+        </div>
+
+        <div class="status">Ready.</div>
+      </div>
+
+      <p class="sectionTitle">状態差分見本（別要素）</p>
+      <div class="stateGrid">
+        <div class="stateBox">
+          <div class="stateLabel">Status: success</div>
+          <div class="status">Minified successfully.</div>
+        </div>
+
+        <div class="stateBox">
+          <div class="stateLabel">Status: error</div>
+          <div class="status error">Runtime error: prettier.format is not available.</div>
+        </div>
+
+        <div class="stateBox">
+          <div class="stateLabel">Theme button: light</div>
+          <div class="btn ghost small">☀️ White</div>
+        </div>
+
+        <div class="stateBox">
+          <div class="stateLabel">Theme button: dark</div>
+          <div class="btn ghost small">🌙 Black</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

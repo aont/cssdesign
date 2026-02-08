@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TinyMCE ツール デザイン見本</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="sample-tinymce">
+  <header>
+    <div class="headline">
+      <h1>TinyMCE リッチテキスト編集 → HTMLツール（デザイン見本）</h1>
+      <p>※ このページは見た目確認用です。ボタンや入力は動作しません。</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>ツールバー状態見本（静的）</h2>
+      <div class="content">
+        <div class="row">
+          <span class="label">通常:</span>
+          <span class="btn">保存（localStorage）</span>
+          <span class="btn">読込（localStorage）</span>
+          <span class="btn">HTMLを下に反映</span>
+        </div>
+        <div class="row">
+          <span class="label">ホバー/選択:</span>
+          <span class="btn btn-hover">プレビュー更新</span>
+          <span class="btn btn-active">HTMLコピー</span>
+          <span class="btn btn-danger">HTMLをダウンロード</span>
+        </div>
+        <div class="row">
+          <span class="label">無効:</span>
+          <span class="btn btn-disabled">保存（無効）</span>
+          <span class="btn btn-disabled">読込（無効）</span>
+          <span class="upload disabled">HTMLファイル読み込み（無効）</span>
+        </div>
+        <div class="row">
+          <span class="label">ファイル入力:</span>
+          <span class="upload">HTMLファイル読み込み</span>
+          <span class="upload focus">HTMLファイル読み込み（フォーカス）</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>編集・出力・プレビュー領域の見本（静的）</h2>
+      <div class="content state-grid">
+        <article class="state-card">
+          <h3>編集エリア（入力中）</h3>
+          <div class="editor-box">
+            &lt;h2&gt;サンプル&lt;/h2&gt;<br>
+            &lt;p&gt;&lt;strong&gt;TinyMCE&lt;/strong&gt; で編集した内容...&lt;/p&gt;
+          </div>
+          <p class="note">フォーカス状態を想定した明るい背景。</p>
+        </article>
+
+        <article class="state-card">
+          <h3>HTML出力（通常）</h3>
+          <div class="output-box">
+            &lt;h2&gt;サンプル&lt;/h2&gt;<br>
+            &lt;p&gt;HTMLの出力結果が表示される領域&lt;/p&gt;
+          </div>
+          <p class="note">コピーや保存前の表示イメージ。</p>
+        </article>
+
+        <article class="state-card">
+          <h3>HTML出力（読み取り専用）</h3>
+          <div class="output-box readonly">
+            読み取り専用状態の見た目（編集不可）
+          </div>
+          <p class="note">ロック中や編集中断時の見た目例。</p>
+        </article>
+
+        <article class="state-card">
+          <h3>プレビュー（表示中）</h3>
+          <div class="preview-box">
+            <h4 style="margin:0 0 8px;">プレビュータイトル</h4>
+            <p style="margin:0; font-size:13px;">実際のHTMLレンダリング結果が入る想定。</p>
+          </div>
+          <p class="note">iframeプレビュー領域の見た目。</p>
+        </article>
+
+        <article class="state-card">
+          <h3>プレビュー（空状態）</h3>
+          <div class="preview-box empty">プレビューはまだありません</div>
+          <p class="note">初期表示やエラー時の空状態。</p>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
