@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>簡易HTMLエディタ（Static Design）</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="theme-root page-body">
+  <main class="page-main preview-stack-md">
+    <header class="page-header">
+      <div>
+        <h1 class="page-title">簡易HTMLエディタ</h1>
+        <p class="subtle">https://aont.github.io/html-editor.html を JavaScript なしの静的UIとして再構成しています。</p>
+      </div>
+      <span class="ui-badge"><span class="ui-dot" aria-hidden="true"></span>Static UI Preview</span>
+    </header>
+
+    <section class="preview-card" aria-labelledby="toolbar-preview-title">
+      <div class="preview-card-header">
+        <h2 class="preview-card-title" id="toolbar-preview-title">Toolbar / Interaction States</h2>
+      </div>
+      <div class="preview-card-body preview-stack-md">
+        <article class="tool-surface preview-stack-sm">
+          <p class="status-box">Default</p>
+          <div class="rich-toolbar" role="toolbar" aria-label="Editor toolbar default preview">
+            <label class="toolbar-chip">言語:
+              <select class="form-select form-select-compact">
+                <option>日本語</option>
+                <option>English</option>
+              </select>
+            </label>
+            <select class="form-select form-select-compact" aria-label="Block format">
+              <option>段落 (P)</option>
+              <option>H1</option>
+              <option>H2</option>
+              <option>H3</option>
+            </select>
+            <button type="button" class="button secondary button-sm">太字</button>
+            <button type="button" class="button secondary button-sm">斜体</button>
+            <button type="button" class="button secondary button-sm">下線</button>
+            <label class="toolbar-chip">色: <input type="color" value="#24292f" /></label>
+            <button type="button" class="button button-sm">色適用</button>
+            <button type="button" class="button secondary button-sm">リンク</button>
+            <button type="button" class="button secondary button-sm">解除</button>
+          </div>
+        </article>
+
+        <div class="state-grid state-grid-2">
+          <article class="tool-surface preview-stack-sm">
+            <p class="status-box">Selected / Active</p>
+            <div class="rich-toolbar" role="toolbar" aria-label="Editor toolbar active preview">
+              <button type="button" class="button secondary button-sm is-pressed">太字</button>
+              <button type="button" class="button secondary button-sm is-pressed">斜体</button>
+              <button type="button" class="button secondary button-sm">下線</button>
+              <button type="button" class="button secondary button-sm">UL</button>
+              <button type="button" class="button secondary button-sm is-pressed">OL</button>
+              <button type="button" class="button secondary button-sm">→</button>
+              <button type="button" class="button secondary button-sm">←</button>
+              <button type="button" class="button button-sm is-pressed">Paste: Sanitize</button>
+              <button type="button" class="button secondary button-sm is-pressed">Debug: ON</button>
+            </div>
+          </article>
+
+          <article class="tool-surface preview-stack-sm">
+            <p class="status-box">Disabled</p>
+            <div class="rich-toolbar" role="toolbar" aria-label="Editor toolbar disabled preview">
+              <button type="button" class="button secondary button-sm" disabled>Undo</button>
+              <button type="button" class="button secondary button-sm" disabled>Redo</button>
+              <button type="button" class="button secondary button-sm" disabled>書式クリア</button>
+              <button type="button" class="button button-sm" disabled>全消去</button>
+              <button type="button" class="button secondary button-sm" disabled>HTMLコピー</button>
+              <button type="button" class="button secondary button-sm" disabled>Dump</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="preview-card" aria-labelledby="editor-preview-title">
+      <div class="preview-card-header">
+        <h2 class="preview-card-title" id="editor-preview-title">Editor / Output / Preview</h2>
+      </div>
+      <div class="preview-card-body preview-stack-md">
+        <div class="state-grid state-grid-2">
+          <article class="tool-surface preview-stack-sm">
+            <p class="status-box">Editor (通常)</p>
+            <div class="editor-surface" contenteditable="true">
+              <h3>ここを編集できます</h3>
+              <p>テキストを選択して、<strong>太字</strong>、<em>斜体</em>、<u>下線</u>、<span style="color:#0969da;">色</span> を適用する想定です。</p>
+            </div>
+          </article>
+          <article class="tool-surface preview-stack-sm">
+            <p class="status-box success">Editor (選択中フォーカス)</p>
+            <div class="editor-surface is-focused" contenteditable="true">
+              <h3>読み込み時の内容</h3>
+              <p><a href="#">リンク付きテキスト</a>や、リスト・見出しを含むサンプルです。</p>
+              <ul>
+                <li>カーソル位置に挿入</li>
+                <li>末尾に追加</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <div class="preview-grid preview-grid-split">
+          <article class="log-panel preview-stack-sm">
+            <p class="status-box">HTML出力（editor.innerHTML）</p>
+            <textarea class="form-textarea form-textarea-compact" readonly>&lt;h3&gt;ここを編集できます&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;太字&lt;/strong&gt; と &lt;em&gt;斜体&lt;/em&gt; のサンプル。&lt;/p&gt;</textarea>
+          </article>
+          <article class="log-panel preview-stack-sm">
+            <p class="status-box">プレビュー（そのまま表示）</p>
+            <div class="editor-surface editor-surface-compact">
+              <h3>ここを編集できます</h3>
+              <p><strong>太字</strong> と <em>斜体</em> のサンプル。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="preview-card" aria-labelledby="load-preview-title">
+      <div class="preview-card-header">
+        <h2 class="preview-card-title" id="load-preview-title">Load / Insert States</h2>
+      </div>
+      <div class="preview-card-body preview-stack-md">
+        <div class="state-grid state-grid-2">
+          <article class="tool-surface preview-stack-sm">
+            <p class="status-box">Sanitize ON</p>
+            <div class="toolbar-row">
+              <button type="button" class="button secondary button-sm">HTML読み込み</button>
+              <button type="button" class="button secondary button-sm">カーソル位置に挿入</button>
+              <button type="button" class="button secondary button-sm">末尾に追加</button>
+            </div>
+            <label class="toggle-label"><input type="checkbox" class="form-input-checkbox" checked /> 読み込み/挿入時にSanitizeする</label>
+            <textarea class="form-textarea form-textarea-compact">&lt;p&gt;貼り付けHTML&lt;/p&gt;
+&lt;script&gt;alert('removed')&lt;/script&gt;</textarea>
+          </article>
+
+          <article class="tool-surface preview-stack-sm">
+            <p class="status-box error">Sanitize OFF</p>
+            <div class="toolbar-row">
+              <input type="file" class="form-input-text" />
+              <button type="button" class="button secondary button-sm">ファイル→入力欄</button>
+            </div>
+            <label class="toggle-label"><input type="checkbox" class="form-input-checkbox" /> 読み込み/挿入時にSanitizeする</label>
+            <textarea class="form-textarea form-textarea-compact" placeholder="ここにHTMLを貼り付けて、上のボタンで読み込み/挿入してください。"></textarea>
+          </article>
+        </div>
+
+        <p class="hint-line">ショートカット例: <kbd>Ctrl</kbd>+<kbd>B</kbd>（太字） / <kbd>Ctrl</kbd>+<kbd>I</kbd>（斜体） / <kbd>Ctrl</kbd>+<kbd>U</kbd>（下線） / <kbd>Ctrl</kbd>+<kbd>Z</kbd>（Undo）</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
