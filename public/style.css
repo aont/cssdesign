@@ -814,3 +814,9 @@ kbd {
     grid-template-columns: 1fr;
   }
 }
+
+.theme-toggle-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}

@@ -4,10 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>HTML List</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <main>
-    <h1>HTML Files in public</h1>
+<body class="theme-root page-body">
+  <main class="page-main">
+    <div class="theme-toggle-row">
+      <button type="button" class="button secondary" id="theme_toggle" aria-live="polite">Theme: Auto</button>
+    </div>
+    <h1 class="page-title">HTML Files in public</h1>
     <ul>
       <li><a href="chatgpt-bookmarklet.html">chatgpt-bookmarklet.html</a></li>
       <li><a href="git-webui.html">git-webui.html</a></li>
@@ -21,5 +25,6 @@
       <li><a href="yt-subtitle.html">yt-subtitle.html</a></li>
     </ul>
   </main>
+  <script src="theme-toggle.js"></script>
 </body>
 </html>
