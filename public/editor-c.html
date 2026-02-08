@@ -7,21 +7,21 @@
 
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="sample-ckeditor">
-<header>
+<body class="sample-common sample-editor sample-editor-compact">
+<header class="sample-header">
   <h1>CKEditor 5 Debug RTE - Design Sample</h1>
   <div class="chip">Status: booting...</div>
 </header>
 
-<div class="wrap">
+<main class="editor-shell">
   <section class="card">
     <h2>Status Display Samples (by State)</h2>
     <div class="content">
       <div class="states">
         <div class="chip">Status: booting...</div>
-        <div class="chip loading">Status: loading</div>
-        <div class="chip ready">Status: ready</div>
-        <div class="chip error">Status: init failed</div>
+        <div class="chip is-loading">Status: loading</div>
+        <div class="chip is-ready">Status: ready</div>
+        <div class="chip is-error">Status: init failed</div>
       </div>
     </div>
   </section>
@@ -32,37 +32,37 @@
       <div class="row">
         <div class="label">Normal</div>
         <div class="button-row">
-          <button class="primary">Save (localStorage)</button>
+          <button class="is-primary">Save (localStorage)</button>
           <button>Load (localStorage)</button>
           <button>Apply to HTML (Below)</button>
-          <button class="danger">Clear</button>
+          <button class="is-danger">Clear</button>
         </div>
       </div>
       <div class="row">
         <div class="label">Hover Style</div>
         <div class="button-row">
-          <button class="primary hover">Save (localStorage)</button>
-          <button class="hover">Load (localStorage)</button>
-          <button class="hover">Apply to HTML (Below)</button>
-          <button class="danger hover">Clear</button>
+          <button class="is-primary is-hover">Save (localStorage)</button>
+          <button class="is-hover">Load (localStorage)</button>
+          <button class="is-hover">Apply to HTML (Below)</button>
+          <button class="is-danger is-hover">Clear</button>
         </div>
       </div>
       <div class="row">
         <div class="label">Focus Style</div>
         <div class="button-row">
-          <button class="primary focus">Save (localStorage)</button>
-          <button class="focus">Load (localStorage)</button>
-          <button class="focus">Apply to HTML (Below)</button>
-          <button class="danger focus">Clear</button>
+          <button class="is-primary is-focus">Save (localStorage)</button>
+          <button class="is-focus">Load (localStorage)</button>
+          <button class="is-focus">Apply to HTML (Below)</button>
+          <button class="is-danger is-focus">Clear</button>
         </div>
       </div>
       <div class="row">
         <div class="label">Disabled</div>
         <div class="button-row">
-          <button class="primary" disabled>Save (localStorage)</button>
+          <button class="is-primary" disabled>Save (localStorage)</button>
           <button disabled>Load (localStorage)</button>
           <button disabled>Apply to HTML (Below)</button>
-          <button class="danger" disabled>Clear</button>
+          <button class="is-danger" disabled>Clear</button>
         </div>
       </div>
     </div>
@@ -73,7 +73,7 @@
     <div class="content">
       <div class="row">
         <div class="label">Initial</div>
-        <div class="editor-box empty">If you can type here, initialization is successful.</div>
+        <div class="editor-box is-empty">If you can type here, initialization is successful.</div>
       </div>
       <div class="row">
         <div class="label">After Input</div>
@@ -88,7 +88,7 @@
       </div>
       <div class="row">
         <div class="label">Disabled</div>
-        <div class="editor-box disabled">(Appearance when editor is disabled)</div>
+        <div class="editor-box is-disabled">(Appearance when editor is disabled)</div>
       </div>
       <p class="hint">* This page is a static design sample. JavaScript features are not implemented.</p>
     </div>
@@ -103,7 +103,7 @@
       </div>
       <div class="row">
         <div class="label">HTML Focus Style</div>
-        <textarea class="focus" readonly>&lt;h2&gt;Title&lt;/h2&gt;
+        <textarea class="is-focus" readonly>&lt;h2&gt;Title&lt;/h2&gt;
 &lt;p&gt;Body&lt;/p&gt;</textarea>
       </div>
       <div class="row">
@@ -119,6 +119,6 @@
       </div>
     </div>
   </section>
-</div>
+</main>
 </body>
 </html>

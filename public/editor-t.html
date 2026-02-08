@@ -7,16 +7,16 @@
 
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="sample-tinymce">
-  <header>
-    <div class="headline">
+<body class="sample-common sample-editor sample-editor-soft">
+  <header class="sample-header">
+    <div class="sample-headline">
       <h1>TinyMCE Rich Text Editing → HTMLTool（Design Sample）</h1>
       <p>※ This page is for visual checks only. Buttons and inputs are non-functional.</p>
     </div>
   </header>
 
-  <main>
-    <section class="panel">
+  <main class="editor-shell">
+    <section class="card">
       <h2>Toolbar State Samples (Static)</h2>
       <div class="content">
         <div class="row">
@@ -27,25 +27,25 @@
         </div>
         <div class="row">
           <span class="label">Hover/Active:</span>
-          <span class="btn btn-hover">Update Preview</span>
-          <span class="btn btn-active">Copy HTML</span>
-          <span class="btn btn-danger">Download HTML</span>
+          <span class="btn is-hover">Update Preview</span>
+          <span class="btn is-active">Copy HTML</span>
+          <span class="btn is-danger">Download HTML</span>
         </div>
         <div class="row">
           <span class="label">Disabled:</span>
-          <span class="btn btn-disabled">Save (Disabled)</span>
-          <span class="btn btn-disabled">Load (Disabled)</span>
-          <span class="upload disabled">Load HTML File (Disabled)</span>
+          <span class="btn is-disabled">Save (Disabled)</span>
+          <span class="btn is-disabled">Load (Disabled)</span>
+          <span class="upload is-disabled">Load HTML File (Disabled)</span>
         </div>
         <div class="row">
           <span class="label">File Input:</span>
           <span class="upload">Load HTML File</span>
-          <span class="upload focus">Load HTML File (Focus)</span>
+          <span class="upload is-focus">Load HTML File (Focus)</span>
         </div>
       </div>
     </section>
 
-    <section class="panel">
+    <section class="card">
       <h2>Editor, Output, and Preview Areas (Static)</h2>
       <div class="content state-grid">
         <article class="state-card">
@@ -68,7 +68,7 @@
 
         <article class="state-card">
           <h3>HTML Output (Read-Only)</h3>
-          <div class="output-box readonly">
+          <div class="output-box is-readonly">
             Read-only state appearance (not editable)
           </div>
           <p class="note">Appearance example while locked or editing is paused.</p>
@@ -85,7 +85,7 @@
 
         <article class="state-card">
           <h3>Preview (Empty State)</h3>
-          <div class="preview-box empty">No preview yet</div>
+          <div class="preview-box is-empty">No preview yet</div>
           <p class="note">Empty state for initial view or errors.</p>
         </article>
       </div>
