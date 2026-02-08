@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clipboard Tool (Static Design)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="theme-root page-body">
+  <main class="page-main">
+    <header class="page-header">
+      <div>
+        <h1 class="page-title">Clipboard Tool</h1>
+        <p class="subtle">元 UI を JavaScript なしの静的プレビューとして移植し、状態差分を同時表示しています。</p>
+      </div>
+      <span class="ui-badge" aria-label="Mobile friendly preview">
+        <span class="ui-dot" aria-hidden="true"></span>
+        Mobile-friendly
+      </span>
+    </header>
+
+    <section class="preview-card" aria-labelledby="clipboard-editor-title">
+      <div class="preview-card-header">
+        <h2 class="preview-card-title" id="clipboard-editor-title">Clipboard Editor States</h2>
+      </div>
+      <div class="preview-card-body preview-stack-md">
+        <div class="state-grid state-grid-2">
+          <article class="log-panel">
+            <p class="status-box">Empty</p>
+            <textarea class="form-textarea form-textarea-compact" placeholder="Paste or type here…"></textarea>
+            <div class="meta-row subtle">
+              <span>0 characters</span>
+              <span>Secure context: yes</span>
+            </div>
+          </article>
+          <article class="log-panel">
+            <p class="status-box success">With clipboard content</p>
+            <textarea class="form-textarea form-textarea-compact">&lt;div style="font-family:sans-serif;"&gt;Line 1&lt;/div&gt;
+&lt;div style="font-family:sans-serif;"&gt;Line 2&lt;/div&gt;</textarea>
+            <div class="meta-row subtle">
+              <span>102 characters</span>
+              <span>Secure context: no</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="preview-card" aria-labelledby="action-title">
+      <div class="preview-card-header">
+        <h2 class="preview-card-title" id="action-title">Action Buttons (Enabled / Disabled)</h2>
+      </div>
+      <div class="preview-card-body preview-stack-md">
+        <div class="state-grid state-grid-2">
+          <article class="ui-pill preview-stack-sm">
+            <p class="status-box">Clipboard API available</p>
+            <div class="state-grid state-grid-2">
+              <button type="button" class="button button-block">Read Text</button>
+              <button type="button" class="button button-block">Write Text</button>
+              <button type="button" class="button button-block">Read HTML</button>
+              <button type="button" class="button button-block">Write HTML</button>
+              <button type="button" class="button secondary button-block">Select All</button>
+              <button type="button" class="button secondary button-block">Clear</button>
+            </div>
+          </article>
+
+          <article class="ui-pill preview-stack-sm">
+            <p class="status-box error">HTML access not supported</p>
+            <div class="state-grid state-grid-2">
+              <button type="button" class="button button-block">Read Text</button>
+              <button type="button" class="button button-block">Write Text</button>
+              <button type="button" class="button button-block" disabled>Read HTML</button>
+              <button type="button" class="button button-block" disabled>Write HTML</button>
+              <button type="button" class="button secondary button-block">Select All</button>
+              <button type="button" class="button secondary button-block">Clear</button>
+            </div>
+          </article>
+        </div>
+
+        <p class="subtle">Tip: Read HTML が無効な環境では Read Text を利用する想定です。</p>
+      </div>
+    </section>
+
+    <section class="preview-card" aria-labelledby="font-title">
+      <div class="preview-card-header">
+        <h2 class="preview-card-title" id="font-title">Font Size Controls</h2>
+      </div>
+      <div class="preview-card-body preview-stack-md">
+        <div class="state-grid state-grid-2">
+          <article class="ui-pill preview-stack-sm">
+            <p class="status-box">Default (16px)</p>
+            <div class="control-row">
+              <label class="form-label form-label-inline" for="font-size-default">Font size</label>
+              <input class="form-input-range" id="font-size-default" type="range" min="8" max="72" value="16" />
+              <input class="form-input-number" type="number" min="8" max="72" value="16" />
+            </div>
+            <div class="state-grid state-grid-2">
+              <button type="button" class="button button-block">Wrap as HTML with Font Size</button>
+              <button type="button" class="button secondary button-block">Preview Font Size (local)</button>
+            </div>
+          </article>
+
+          <article class="ui-pill preview-stack-sm">
+            <p class="status-box success">Adjusted (28px)</p>
+            <div class="control-row">
+              <label class="form-label form-label-inline" for="font-size-custom">Font size</label>
+              <input class="form-input-range" id="font-size-custom" type="range" min="8" max="72" value="28" />
+              <input class="form-input-number" type="number" min="8" max="72" value="28" />
+            </div>
+            <div class="state-grid state-grid-2">
+              <button type="button" class="button button-block">Wrap as HTML with Font Size</button>
+              <button type="button" class="button secondary button-block">Preview Font Size (local)</button>
+            </div>
+          </article>
+        </div>
+
+        <p class="subtle">Wrap as HTML は text/html と text/plain を同時に書き込む挙動を想定しています。</p>
+      </div>
+    </section>
+
+    <section class="preview-card" aria-labelledby="status-title">
+      <div class="preview-card-header">
+        <h2 class="preview-card-title" id="status-title">Status Variants</h2>
+      </div>
+      <div class="preview-card-body">
+        <div class="state-grid state-grid-3">
+          <p class="status-box">Ready.</p>
+          <p class="status-box success">Read text from clipboard.</p>
+          <p class="status-box success">Wrote HTML to clipboard.</p>
+          <p class="status-box error">Failed to read text: NotAllowedError</p>
+          <p class="status-box error">Clipboard API not available in this browser.</p>
+          <p class="status-box error">This page is not in a secure context (HTTPS).</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
