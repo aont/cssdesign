@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JavaScript Minify / Format Tool (Static Design)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="theme-root page-body">
+  <main class="page-main">
+    <header class="page-header">
+      <div>
+        <h1 class="page-title">JavaScript Minify / Format Tool</h1>
+        <p class="subtle">https://aont.github.io/js-format/index.html を JavaScript なしの静的プレビューとして再構成しています。</p>
+      </div>
+      <span class="ui-badge" aria-label="Visual style">
+        <span class="ui-dot" aria-hidden="true"></span>
+        Static UI Preview
+      </span>
+    </header>
+
+    <section class="preview-card" aria-labelledby="toolbar-title">
+      <div class="preview-card-header">
+        <h2 class="preview-card-title" id="toolbar-title">Toolbar States</h2>
+      </div>
+      <div class="preview-card-body preview-stack-md">
+        <div class="state-grid state-grid-2">
+          <div class="toolbar-row">
+            <button type="button" class="button">Minify ↓</button>
+            <button type="button" class="button">Format ↑</button>
+            <button type="button" class="button secondary">Swap ⇄</button>
+            <button type="button" class="button button-danger">Clear</button>
+          </div>
+          <div class="toolbar-row">
+            <button type="button" class="button" disabled>Minify ↓</button>
+            <button type="button" class="button" disabled>Format ↑</button>
+            <button type="button" class="button secondary" disabled>Swap ⇄</button>
+            <button type="button" class="button button-danger" disabled>Clear</button>
+          </div>
+        </div>
+        <p class="subtle">有効/無効状態を同時表示しています。</p>
+      </div>
+    </section>
+
+    <section class="preview-card" aria-labelledby="editor-title">
+      <div class="preview-card-header">
+        <h2 class="preview-card-title" id="editor-title">Input / Output Panels</h2>
+      </div>
+      <div class="preview-card-body">
+        <div class="preview-grid preview-grid-split">
+          <article class="log-panel preview-stack-sm">
+            <div class="panel-header-inline">
+              <p class="status-box">Input (original / formatted)</p>
+              <div class="toolbar-row toolbar-row-inline">
+                <button type="button" class="button secondary">Paste</button>
+                <button type="button" class="button secondary">Copy</button>
+              </div>
+            </div>
+            <label class="form-label" for="input_js">入力済み</label>
+            <textarea id="input_js" class="form-textarea form-textarea-compact">(() => {
+  const target = document.querySelector('#app');
+  if (!target) return;
+  target.textContent = 'hello world';
+})();</textarea>
+            <label class="form-label" for="input_blank">未入力</label>
+            <textarea id="input_blank" class="form-textarea form-textarea-compact" placeholder="Paste JavaScript here..."></textarea>
+          </article>
+
+          <article class="log-panel preview-stack-sm">
+            <div class="panel-header-inline">
+              <p class="status-box">Output (minified)</p>
+              <div class="toolbar-row toolbar-row-inline">
+                <button type="button" class="button secondary">Copy</button>
+                <button type="button" class="button secondary">Select</button>
+              </div>
+            </div>
+            <label class="form-label" for="output_js">生成済み</label>
+            <textarea id="output_js" class="form-textarea form-textarea-compact">(()=>{const e=document.querySelector("#app");e&&(e.textContent="hello world")})();</textarea>
+            <label class="form-label" for="output_blank">未生成</label>
+            <textarea id="output_blank" class="form-textarea form-textarea-compact" placeholder="Minified code will appear here..."></textarea>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="preview-card" aria-labelledby="bookmarklet-title">
+      <div class="preview-card-header">
+        <h2 class="preview-card-title" id="bookmarklet-title">Bookmarklet & Status Variants</h2>
+      </div>
+      <div class="preview-card-body preview-stack-md">
+        <div class="state-grid state-grid-2">
+          <div class="bookmarklet-line-static">
+            <span>Bookmarklet:</span>
+            <a href="#" class="bookmarklet-link-static">bookmarklet</a>
+          </div>
+          <div class="bookmarklet-line-static">
+            <span>Bookmarklet:</span>
+            <span class="bookmarklet-empty">about:blank</span>
+          </div>
+        </div>
+
+        <div class="state-grid state-grid-3">
+          <p class="status-box">Ready.</p>
+          <p class="status-box success">Minified successfully.</p>
+          <p class="status-box success">Formatted successfully.</p>
+          <p class="status-box">Swapped input and output.</p>
+          <p class="status-box error">Could not access clipboard.</p>
+          <p class="status-box error">Terser is not available.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
