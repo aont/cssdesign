@@ -4,137 +4,137 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Clipboard Processor (Static Design)</title>
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 </head>
-<body class="theme-root page-body">
-  <main class="page-main">
-    <div class="theme-toggle-row">
-      <button type="button" class="button secondary" id="theme_toggle" aria-live="polite">Theme: Auto</button>
+<body class="bg-body-tertiary">
+  <main class="container py-4">
+    <div class="d-flex justify-content-end mb-3">
+      <button type="button" class="btn btn-outline-secondary" id="theme_toggle" aria-live="polite">Theme: Auto</button>
     </div>
-    <header class="page-header">
+    <header class="d-flex justify-content-between align-items-start flex-wrap gap-3 mb-4">
       <div>
-        <h1 class="page-title">Clipboard Processor</h1>
-        <p class="subtle">This preview recreates the clipboard formatting tool screen as a static design without JavaScript.</p>
+        <h1 class="h3 mb-2">Clipboard Processor</h1>
+        <p class="text-secondary small">This preview recreates the clipboard formatting tool screen as a static design without JavaScript.</p>
       </div>
-      <span class="ui-badge" aria-label="Visual style">
-        <span class="ui-dot" aria-hidden="true"></span>
+      <span class="badge text-bg-light border d-inline-flex align-items-center gap-2" aria-label="Visual style">
+        <span class="rounded-circle bg-primary d-inline-block" aria-hidden="true"></span>
         Static UI Preview
       </span>
     </header>
 
-    <div class="preview-grid preview-grid-split">
-      <section class="preview-card" aria-labelledby="overview-title">
-        <div class="preview-card-header">
-          <h2 class="preview-card-title" id="overview-title">Overview</h2>
+    <div class="row g-3">
+      <section class="card shadow-sm h-100" aria-labelledby="overview-title">
+        <div class="card-header">
+          <h2 class="h5 mb-0" id="overview-title">Overview</h2>
         </div>
-        <div class="preview-card-body preview-stack-md">
-          <p class="subtle">Reads clipboard text, converts line breaks into <code>&lt;div&gt;</code> based HTML, and writes both <code>text/plain</code> and <code>text/html</code>.</p>
-          <div class="state-grid state-grid-2">
-            <p class="status-box">Chars: -</p>
-            <p class="status-box">Chars: 184</p>
-            <p class="status-box">Device: Desktop</p>
-            <p class="status-box">Device: Mobile</p>
+        <div class="card-body d-grid gap-3">
+          <p class="text-secondary small">Reads clipboard text, converts line breaks into <code>&lt;div&gt;</code> based HTML, and writes both <code>text/plain</code> and <code>text/html</code>.</p>
+          <div class="row row-cols-1 row-cols-md-2 g-2">
+            <p class="alert alert-secondary py-2 mb-0">Chars: -</p>
+            <p class="alert alert-secondary py-2 mb-0">Chars: 184</p>
+            <p class="alert alert-secondary py-2 mb-0">Device: Desktop</p>
+            <p class="alert alert-secondary py-2 mb-0">Device: Mobile</p>
           </div>
         </div>
       </section>
 
-      <section class="preview-card" aria-labelledby="preset-title">
-        <div class="preview-card-header">
-          <h2 class="preview-card-title" id="preset-title">Preset Selection</h2>
+      <section class="card shadow-sm h-100" aria-labelledby="preset-title">
+        <div class="card-header">
+          <h2 class="h5 mb-0" id="preset-title">Preset Selection</h2>
         </div>
-        <div class="preview-card-body preview-stack-md">
-          <div class="field-group">
+        <div class="card-body d-grid gap-3">
+          <div class="d-grid gap-2">
             <label class="form-label" for="preset_default">HTML preset (default)</label>
             <select class="form-select" id="preset_default">
               <option selected>DIV + sans-serif</option>
               <option>OLK Style</option>
             </select>
           </div>
-          <div class="field-group">
+          <div class="d-grid gap-2">
             <label class="form-label" for="preset_olk">HTML preset (olk)</label>
             <select class="form-select" id="preset_olk">
               <option>DIV + sans-serif</option>
               <option selected>OLK Style</option>
             </select>
           </div>
-          <div class="state-grid state-grid-2">
-            <p class="status-box">Badge: default</p>
-            <p class="status-box success">Badge: olk</p>
+          <div class="row row-cols-1 row-cols-md-2 g-2">
+            <p class="alert alert-secondary py-2 mb-0">Badge: default</p>
+            <p class="alert alert-success py-2 mb-0">Badge: olk</p>
           </div>
-          <p class="subtle">The selected preset is expected to change the line-break conversion rules in <code>toHtml()</code>.</p>
+          <p class="text-secondary small">The selected preset is expected to change the line-break conversion rules in <code>toHtml()</code>.</p>
         </div>
       </section>
 
-      <section class="preview-card" aria-labelledby="theme-title">
-        <div class="preview-card-header">
-          <h2 class="preview-card-title" id="theme-title">Theme Selection</h2>
+      <section class="card shadow-sm h-100" aria-labelledby="theme-title">
+        <div class="card-header">
+          <h2 class="h5 mb-0" id="theme-title">Theme Selection</h2>
         </div>
-        <div class="preview-card-body preview-stack-md">
-          <div class="field-group">
+        <div class="card-body d-grid gap-3">
+          <div class="d-grid gap-2">
             <label class="form-label" for="theme_light">Theme (light)</label>
             <select class="form-select" id="theme_light">
               <option selected>Light</option>
               <option>Dark</option>
             </select>
           </div>
-          <div class="field-group">
+          <div class="d-grid gap-2">
             <label class="form-label" for="theme_dark">Theme (dark)</label>
             <select class="form-select" id="theme_dark">
               <option>Light</option>
               <option selected>Dark</option>
             </select>
           </div>
-          <div class="state-grid state-grid-2">
-            <p class="status-box">Theme badge: light</p>
-            <p class="status-box success">Theme badge: dark</p>
+          <div class="row row-cols-1 row-cols-md-2 g-2">
+            <p class="alert alert-secondary py-2 mb-0">Theme badge: light</p>
+            <p class="alert alert-success py-2 mb-0">Theme badge: dark</p>
           </div>
-          <p class="subtle">Themes are expected to affect only UI appearance and not the output format.</p>
+          <p class="text-secondary small">Themes are expected to affect only UI appearance and not the output format.</p>
         </div>
       </section>
 
-      <section class="preview-card" aria-labelledby="actions-title">
-        <div class="preview-card-header">
-          <h2 class="preview-card-title" id="actions-title">Action & Status</h2>
+      <section class="card shadow-sm h-100" aria-labelledby="actions-title">
+        <div class="card-header">
+          <h2 class="h5 mb-0" id="actions-title">Action & Status</h2>
         </div>
-        <div class="preview-card-body preview-stack-md">
-          <div class="state-grid state-grid-2">
-            <button type="button" class="button button-block">Format and overwrite clipboard</button>
-            <button type="button" class="button button-block" disabled>Processing…</button>
+        <div class="card-body d-grid gap-3">
+          <div class="row row-cols-1 row-cols-md-2 g-2">
+            <button type="button" class="btn btn-primary w-100">Format and overwrite clipboard</button>
+            <button type="button" class="btn btn-primary w-100" disabled>Processing…</button>
           </div>
 
-          <div class="state-grid state-grid-3">
-            <p class="status-box">Idle</p>
-            <p class="status-box success">Done</p>
-            <p class="status-box error">Failed</p>
-            <p class="status-box">Clipboard is empty</p>
-            <p class="status-box">No text found in clipboard</p>
-            <p class="status-box error">Clipboard API is not available</p>
+          <div class="row row-cols-1 row-cols-md-3 g-2">
+            <p class="alert alert-secondary py-2 mb-0">Idle</p>
+            <p class="alert alert-success py-2 mb-0">Done</p>
+            <p class="alert alert-danger py-2 mb-0">Failed</p>
+            <p class="alert alert-secondary py-2 mb-0">Clipboard is empty</p>
+            <p class="alert alert-secondary py-2 mb-0">No text found in clipboard</p>
+            <p class="alert alert-danger py-2 mb-0">Clipboard API is not available</p>
           </div>
 
-          <div class="state-grid state-grid-2">
-            <button type="button" class="button secondary button-block">Clear log</button>
-            <button type="button" class="button secondary button-block" disabled>Clear log (disabled)</button>
+          <div class="row row-cols-1 row-cols-md-2 g-2">
+            <button type="button" class="btn btn-outline-secondary w-100">Clear log</button>
+            <button type="button" class="btn btn-outline-secondary w-100" disabled>Clear log (disabled)</button>
           </div>
         </div>
       </section>
     </div>
 
-    <section class="preview-card" aria-labelledby="log-title">
-      <div class="preview-card-header">
-        <h2 class="preview-card-title" id="log-title">Log Variants</h2>
+    <section class="card shadow-sm h-100" aria-labelledby="log-title">
+      <div class="card-header">
+        <h2 class="h5 mb-0" id="log-title">Log Variants</h2>
       </div>
-      <div class="preview-card-body">
-        <div class="preview-grid preview-grid-split">
-          <article class="log-panel" aria-label="Normal log">
-            <p class="status-box">Normal Log</p>
-            <pre class="logs-pre">[2026-01-05 09:12:10] Ready. Tap the button to process the clipboard.
+      <div class="card-body">
+        <div class="row g-3">
+          <article class="border rounded bg-body p-3" aria-label="Normal log">
+            <p class="alert alert-secondary py-2 mb-0">Normal Log</p>
+            <pre class="mb-0 small">[2026-01-05 09:12:10] Ready. Tap the button to process the clipboard.
 [2026-01-05 09:12:18] Input detected (184 characters)
 [2026-01-05 09:12:19] HTML generated with preset: sansDiv
 [2026-01-05 09:12:19] Clipboard write completed (text/plain + text/html)</pre>
           </article>
-          <article class="log-panel" aria-label="Error log">
-            <p class="status-box error">Error Log</p>
-            <pre class="logs-pre">[2026-01-05 09:15:41] Processing started
+          <article class="border rounded bg-body p-3" aria-label="Error log">
+            <p class="alert alert-danger py-2 mb-0">Error Log</p>
+            <pre class="mb-0 small">[2026-01-05 09:15:41] Processing started
 [2026-01-05 09:15:42] Error: Clipboard API is not available.
 [2026-01-05 09:15:42] Hint: Some browsers may restrict writing HTML.</pre>
           </article>

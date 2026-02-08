@@ -4,57 +4,57 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>HTML → Markdown Converter (Static Design)</title>
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 </head>
-<body class="theme-root page-body">
-  <main class="page-main">
-    <div class="theme-toggle-row">
-      <button type="button" class="button secondary" id="theme_toggle" aria-live="polite">Theme: Auto</button>
+<body class="bg-body-tertiary">
+  <main class="container py-4">
+    <div class="d-flex justify-content-end mb-3">
+      <button type="button" class="btn btn-outline-secondary" id="theme_toggle" aria-live="polite">Theme: Auto</button>
     </div>
-    <header class="page-header">
+    <header class="d-flex justify-content-between align-items-start flex-wrap gap-3 mb-4">
       <div>
-        <h1 class="page-title">HTML → Markdown Conversion</h1>
-        <p class="subtle lead-text">This is a static preview reconstruction of https://aont.github.io/html2md/ without JavaScript.</p>
+        <h1 class="h3 mb-2">HTML → Markdown Conversion</h1>
+        <p class="text-secondary small lead-text">This is a static preview reconstruction of https://aont.github.io/html2md/ without JavaScript.</p>
       </div>
-      <span class="ui-badge" aria-label="Visual style">
-        <span class="ui-dot" aria-hidden="true"></span>
+      <span class="badge text-bg-light border d-inline-flex align-items-center gap-2" aria-label="Visual style">
+        <span class="rounded-circle bg-primary d-inline-block" aria-hidden="true"></span>
         Static UI Preview
       </span>
     </header>
 
-    <section class="preview-card" aria-labelledby="toolbar-title">
-      <div class="preview-card-header">
-        <h2 class="preview-card-title" id="toolbar-title">Toolbar / Status States</h2>
+    <section class="card shadow-sm h-100" aria-labelledby="toolbar-title">
+      <div class="card-header">
+        <h2 class="h5 mb-0" id="toolbar-title">Toolbar / Status States</h2>
       </div>
-      <div class="preview-card-body preview-stack-md">
-        <div class="state-grid state-grid-2">
+      <div class="card-body d-grid gap-3">
+        <div class="row row-cols-1 row-cols-md-2 g-2">
           <div class="action-toolbar">
-            <button type="button" class="button secondary">Paste (clipboard → A)</button>
-            <button type="button" class="button">Convert (A → Markdown → B)</button>
-            <button type="button" class="button secondary">Copy (B → clipboard)</button>
+            <button type="button" class="btn btn-outline-secondary">Paste (clipboard → A)</button>
+            <button type="button" class="btn btn-primary">Convert (A → Markdown → B)</button>
+            <button type="button" class="btn btn-outline-secondary">Copy (B → clipboard)</button>
             <span class="status-pill">ready</span>
           </div>
           <div class="action-toolbar">
-            <button type="button" class="button secondary" disabled>Paste (clipboard → A)</button>
-            <button type="button" class="button" disabled>Convert (A → Markdown → B)</button>
-            <button type="button" class="button secondary" disabled>Copy (B → clipboard)</button>
+            <button type="button" class="btn btn-outline-secondary" disabled>Paste (clipboard → A)</button>
+            <button type="button" class="btn btn-primary" disabled>Convert (A → Markdown → B)</button>
+            <button type="button" class="btn btn-outline-secondary" disabled>Copy (B → clipboard)</button>
             <span class="status-pill connected">converted</span>
             <span class="status-pill error">clipboard unavailable</span>
           </div>
         </div>
-        <p class="subtle">Enabled/disabled button states and status variants (normal/success/error) are shown side by side.</p>
+        <p class="text-secondary small">Enabled/disabled button states and status variants (normal/success/error) are shown side by side.</p>
       </div>
     </section>
 
-    <section class="preview-card" aria-labelledby="editor-title">
-      <div class="preview-card-header">
-        <h2 class="preview-card-title" id="editor-title">Textarea Panels</h2>
+    <section class="card shadow-sm h-100" aria-labelledby="editor-title">
+      <div class="card-header">
+        <h2 class="h5 mb-0" id="editor-title">Textarea Panels</h2>
       </div>
-      <div class="preview-card-body">
-        <div class="field-group field-group-wide">
-          <article class="panel-block preview-stack-sm">
+      <div class="card-body">
+        <div class="d-grid gap-2 d-grid gap-2-wide">
+          <article class="panel-block d-grid gap-2">
             <label class="form-label" for="taHtml">Textarea (A): HTML</label>
-            <textarea id="taHtml" class="form-textarea" placeholder="Click Paste to insert HTML from the clipboard here."><article>
+            <textarea id="taHtml" class="form-control" placeholder="Click Paste to insert HTML from the clipboard here."><article>
   <h2>Release note</h2>
   <p><strong>Version 1.2.0</strong> adds keyboard shortcuts.</p>
   <ul>
@@ -62,37 +62,37 @@
     <li>Ctrl + Shift + C: copy markdown</li>
   </ul>
 </article></textarea>
-            <p class="subtle">If there is no HTML in the clipboard, it will read plain text instead.</p>
+            <p class="text-secondary small">If there is no HTML in the clipboard, it will read plain text instead.</p>
           </article>
 
-          <article class="panel-block preview-stack-sm">
+          <article class="panel-block d-grid gap-2">
             <label class="form-label" for="taMd">Textarea (B): Markdown</label>
-            <textarea id="taMd" class="form-textarea" placeholder="Click Convert to output Markdown here.">## Release note
+            <textarea id="taMd" class="form-control" placeholder="Click Convert to output Markdown here.">## Release note
 
 **Version 1.2.0** adds keyboard shortcuts.
 
 - Ctrl + Enter: convert
 - Ctrl + Shift + C: copy markdown</textarea>
-            <p class="subtle">Clipboard API works on <code class="inline-code">https</code> or <code class="inline-code">localhost</code>.</p>
+            <p class="text-secondary small">Clipboard API works on <code class="inline-code">https</code> or <code class="inline-code">localhost</code>.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="preview-card" aria-labelledby="log-title">
-      <div class="preview-card-header">
-        <h2 class="preview-card-title" id="log-title">Log States</h2>
+    <section class="card shadow-sm h-100" aria-labelledby="log-title">
+      <div class="card-header">
+        <h2 class="h5 mb-0" id="log-title">Log States</h2>
       </div>
-      <div class="preview-card-body">
-        <div class="state-grid state-grid-3">
+      <div class="card-body">
+        <div class="row row-cols-1 row-cols-md-3 g-2">
           <article class="logs neutral">
-            <pre class="logs-pre">Ready: waiting for input.</pre>
+            <pre class="mb-0 small">Ready: waiting for input.</pre>
           </article>
           <article class="logs success">
-            <pre class="logs-pre">Conversion complete: 426 chars of HTML converted to 201 chars of Markdown.</pre>
+            <pre class="mb-0 small">Conversion complete: 426 chars of HTML converted to 201 chars of Markdown.</pre>
           </article>
           <article class="logs failure">
-            <pre class="logs-pre">Error: navigator.clipboard is not available. Use HTTPS or localhost.</pre>
+            <pre class="mb-0 small">Error: navigator.clipboard is not available. Use HTTPS or localhost.</pre>
           </article>
         </div>
       </div>

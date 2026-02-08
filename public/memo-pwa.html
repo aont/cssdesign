@@ -4,47 +4,47 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Memo PWA（Static Design）</title>
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 </head>
-<body class="theme-root page-body">
-  <main class="page-main preview-stack-md">
-    <div class="theme-toggle-row">
-      <button type="button" class="button secondary" id="theme_toggle" aria-live="polite">Theme: Auto</button>
+<body class="bg-body-tertiary">
+  <main class="container py-4 d-grid gap-3">
+    <div class="d-flex justify-content-end mb-3">
+      <button type="button" class="btn btn-outline-secondary" id="theme_toggle" aria-live="polite">Theme: Auto</button>
     </div>
-    <header class="page-header">
+    <header class="d-flex justify-content-between align-items-start flex-wrap gap-3 mb-4">
       <div>
-        <h1 class="page-title">Memo Workspace</h1>
-        <p class="subtle">This preview imports https://aont.github.io/memo-pwa/index.html as a static UI without JavaScript.</p>
+        <h1 class="h3 mb-2">Memo Workspace</h1>
+        <p class="text-secondary small">This preview imports https://aont.github.io/memo-pwa/index.html as a static UI without JavaScript.</p>
       </div>
-      <span class="ui-badge"><span class="ui-dot" aria-hidden="true"></span>Static UI Preview</span>
+      <span class="badge text-bg-light border d-inline-flex align-items-center gap-2"><span class="rounded-circle bg-primary d-inline-block" aria-hidden="true"></span>Static UI Preview</span>
     </header>
 
-    <section class="surface-card preview-stack-md" aria-labelledby="workspace-overview-title">
+    <section class="card shadow-sm d-grid gap-3" aria-labelledby="workspace-overview-title">
       <div class="panel-header-inline">
-        <h2 class="section-title" id="workspace-overview-title">Workspace Controls</h2>
+        <h2 class="h5 mb-0" id="workspace-overview-title">Workspace Controls</h2>
         <div class="toolbar-row toolbar-row-inline">
-          <button type="button" class="button secondary button-sm">Save API</button>
-          <button type="button" class="button secondary button-sm">New Memo</button>
-          <button type="button" class="button secondary button-sm">Sync</button>
-          <button type="button" class="button secondary button-sm button-danger">Reset Data</button>
+          <button type="button" class="btn btn-outline-secondary btn-sm">Save API</button>
+          <button type="button" class="btn btn-outline-secondary btn-sm">New Memo</button>
+          <button type="button" class="btn btn-outline-secondary btn-sm">Sync</button>
+          <button type="button" class="btn btn-outline-secondary btn-sm btn-danger">Reset Data</button>
         </div>
       </div>
 
-      <div class="state-grid state-grid-3">
+      <div class="row row-cols-1 row-cols-md-3 g-2">
         <label class="panel-block">
           <span class="form-label">API Base</span>
-          <input class="form-input-text" type="url" placeholder="https://api.example.com" value="https://api.example.com" />
+          <input class="form-control" type="url" placeholder="https://api.example.com" value="https://api.example.com" />
         </label>
-        <p class="status-box success">Sync Status: Online / idle</p>
-        <p class="status-box">Search Status: 2 / 7 matches</p>
+        <p class="alert alert-success py-2 mb-0">Sync Status: Online / idle</p>
+        <p class="alert alert-secondary py-2 mb-0">Search Status: 2 / 7 matches</p>
       </div>
     </section>
 
     <section class="memo-layout" aria-label="Memo workspace layout preview">
-      <aside class="memo-pane preview-stack-sm">
+      <aside class="memo-pane d-grid gap-2">
         <div class="panel-header-inline">
           <h2 class="section-heading">My Memos</h2>
-          <span class="ui-badge"><span class="ui-dot" aria-hidden="true"></span>12 items</span>
+          <span class="badge text-bg-light border d-inline-flex align-items-center gap-2"><span class="rounded-circle bg-primary d-inline-block" aria-hidden="true"></span>12 items</span>
         </div>
         <ul class="item-list">
           <li class="item-row selected">
@@ -62,36 +62,36 @@
         </ul>
       </aside>
 
-      <section class="memo-pane preview-stack-md">
+      <section class="memo-pane d-grid gap-3">
         <div class="editor-header-row">
-          <input class="form-input-text" type="text" value="Daily Notes" aria-label="Memo title" />
-          <button type="button" class="button secondary button-sm">Save Version</button>
-          <button type="button" class="button secondary button-sm button-danger">Delete Memo</button>
+          <input class="form-control" type="text" value="Daily Notes" aria-label="Memo title" />
+          <button type="button" class="btn btn-outline-secondary btn-sm">Save Version</button>
+          <button type="button" class="btn btn-outline-secondary btn-sm btn-danger">Delete Memo</button>
         </div>
 
         <div class="search-grid">
           <label class="panel-block">
             <span class="form-label">Find</span>
-            <input class="form-input-text" type="text" value="api" />
+            <input class="form-control" type="text" value="api" />
           </label>
           <label class="panel-block">
             <span class="form-label">Replace</span>
-            <input class="form-input-text" type="text" value="service" />
+            <input class="form-control" type="text" value="service" />
           </label>
           <label class="toggle-label search-toggle-inline"><input type="checkbox" class="form-input-checkbox" checked /> Case sensitive</label>
           <div class="toolbar-row">
-            <button type="button" class="button secondary button-sm">Find Next</button>
-            <button type="button" class="button secondary button-sm">Replace</button>
-            <button type="button" class="button secondary button-sm">Replace All</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm">Find Next</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm">Replace</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm">Replace All</button>
           </div>
         </div>
 
-        <textarea class="form-textarea memo-editor" aria-label="Memo content">Write your memo...
+        <textarea class="form-control memo-editor" aria-label="Memo content">Write your memo...
 - verify API endpoint
 - update docs
 - share meeting notes</textarea>
 
-        <section class="preview-stack-sm" aria-labelledby="history-title">
+        <section class="d-grid gap-2" aria-labelledby="history-title">
           <h3 class="section-heading" id="history-title">History</h3>
           <ul class="item-list item-list-compact">
             <li class="item-row">

@@ -1,6 +1,6 @@
 # UI Components Design Sample
 
-A lightweight static demo page that showcases reusable UI components, layout patterns, and theme behavior using plain HTML and CSS.
+A lightweight static demo page that showcases reusable UI components, layout patterns, and theme behavior using Bootstrap 5 and plain HTML.
 
 ## Features
 
@@ -12,12 +12,12 @@ A lightweight static demo page that showcases reusable UI components, layout pat
 - Modal dialog examples for success and failure states.
 - Theme support for:
   - system preference (`prefers-color-scheme`)
-  - manual override via `body[data-theme='light' | 'dark']`
+  - manual override via `body[data-bs-theme='light' | 'dark']`
 
 ## Project Structure
 
 - `public/index.html` – demo markup for all UI components.
-- `public/style.css` – component styling, design tokens, and theme variables.
+- Bootstrap 5 is loaded from CDN in each HTML file (no local stylesheet).
 
 ## Getting Started
 

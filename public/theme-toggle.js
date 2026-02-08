@@ -1,4 +1,4 @@
-const THEME_ATTRIBUTE = 'data-theme';
+const THEME_ATTRIBUTE = 'data-bs-theme';
 const THEME_STORAGE_KEY = 'theme-preference';
 const themeToggleButton = document.querySelector('#theme_toggle');
 
