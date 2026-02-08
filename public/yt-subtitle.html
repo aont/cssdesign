@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>YT Subtitle Downloader (Static Design)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="theme-root page-body">
+  <main class="page-main preview-stack-md">
+    <header class="page-intro preview-stack-sm">
+      <h1 class="page-title">YT Subtitle Downloader</h1>
+      <p class="subtle">
+        YouTube の字幕ダウンロード UI を静的に再現したデザインサンプルです。状態変化がある要素は同時に比較できるように並べています。
+      </p>
+    </header>
+
+    <section class="surface-card preview-stack-md">
+      <h2 class="section-title">Input</h2>
+      <div class="preview-stack-sm">
+        <label class="form-label" for="backendAddress">Backend address</label>
+        <input class="form-input-text" id="backendAddress" type="text" value="ws://localhost:8080/ws" readonly />
+        <p class="subtle">Enter the full websocket URL (ws:// or wss://) including /ws.</p>
+      </div>
+
+      <div class="preview-stack-sm">
+        <label class="form-label" for="watchId">YouTube Watch ID or URL</label>
+        <input class="form-input-text" id="watchId" type="text" value="https://www.youtube.com/watch?v=dQw4w9WgXcQ" readonly />
+      </div>
+
+      <div class="state-grid state-grid-3">
+        <button class="button button-block" type="button">Download Subtitles</button>
+        <button class="button button-block" type="button" disabled>Downloading...</button>
+        <button class="button button-block button-danger" type="button">Retry Download</button>
+      </div>
+
+      <div class="state-grid state-grid-3">
+        <p class="status-box">Status: Idle</p>
+        <p class="status-box success">Status: Completed</p>
+        <p class="status-box error">Status: Connection failed</p>
+      </div>
+    </section>
+
+    <section class="surface-card preview-stack-md">
+      <div class="field-header">
+        <h2 class="section-title">Full Subtitle Text</h2>
+        <div class="field-header-actions">
+          <button class="button secondary" type="button" disabled>Copy All (disabled)</button>
+          <button class="button secondary" type="button">Copy All (active)</button>
+          <button class="button secondary" type="button" disabled>Copy Prompt (disabled)</button>
+          <button class="button secondary" type="button">Copy Prompt (active)</button>
+        </div>
+      </div>
+      <textarea class="form-textarea" rows="10" readonly>Never gonna give you up
+Never gonna let you down
+Never gonna run around and desert you
+Never gonna make you cry
+Never gonna say goodbye</textarea>
+    </section>
+
+    <section class="surface-card preview-stack-md">
+      <h2 class="section-title">Prompt Template</h2>
+      <label class="form-label" for="promptTemplate">Template content</label>
+      <textarea class="form-textarea form-textarea-compact" id="promptTemplate" rows="7" readonly>以下は YouTube 字幕です。要約・論点整理・次に見るべき関連トピックを日本語で出力してください。
+
+---
+{subtitle_text}
+---</textarea>
+      <p class="subtle">Stored locally in your browser for future sessions.</p>
+    </section>
+
+    <section class="surface-card preview-stack-md">
+      <div class="field-header">
+        <h2 class="section-title">Processing Log</h2>
+        <div class="field-header-actions">
+          <span class="ui-badge"><span class="ui-dot"></span>Live log stream</span>
+        </div>
+      </div>
+      <div class="log-panel">
+        <pre class="logs-pre">[09:41:11] WebSocket connected
+[09:41:13] Request sent: dQw4w9WgXcQ
+[09:41:14] Extracting subtitle tracks...
+[09:41:15] Download complete: en.vtt
+[09:41:16] Plain text generated</pre>
+      </div>
+    </section>
+
+    <section class="surface-card preview-stack-md">
+      <h2 class="section-title">Completion Modal States</h2>
+      <div class="state-grid state-grid-2">
+        <article class="modal-shell">
+          <div class="modal-content success" role="document">
+            <h3 class="section-subtitle">Download complete</h3>
+            <p>Subtitle text has been generated and is ready to copy.</p>
+            <div class="modal-actions">
+              <button class="button" type="button">Close</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="modal-shell">
+          <div class="modal-content failure" role="document">
+            <h3 class="section-subtitle">Download failed</h3>
+            <p>Could not connect to backend websocket endpoint.</p>
+            <div class="modal-actions">
+              <button class="button" type="button">Close</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
