@@ -1732,3 +1732,56 @@
 .page-body .toolbar .active{ background: #2255cc; }
 .page-body .toolbar .off{ background: var(--panel); color: var(--text); border-color: #b7c0cf; }
 .page-body a{ color: #1f53c5; }
+
+/* === Global layout fixes for all HTML samples === */
+.page-body .page-main {
+  width: min(1100px, calc(100% - 2rem));
+  margin: 2rem auto;
+  padding: clamp(1rem, 2.5vw, 2rem);
+  border-radius: var(--radius);
+  box-sizing: border-box;
+}
+
+.page-body .page-main .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.page-body .page-main .card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  min-width: 0;
+}
+
+.page-body .page-main .row,
+.page-body .page-main .toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.page-body .page-main textarea,
+.page-body .page-main .fake-input,
+.page-body .page-main pre {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+}
+
+.page-body .page-main .preview-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .page-body .page-main {
+    width: calc(100% - 1rem);
+    margin: 0.5rem auto;
+    padding: 0.9rem;
+  }
+}
