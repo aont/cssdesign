@@ -631,6 +631,42 @@
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.15);
 }
 
+.theme-root[data-theme='dark'].sample-yt-subtitle-webui{
+  color-scheme: dark;
+  background: #000;
+  color: #f3f4f6;
+}
+
+.theme-root[data-theme='dark'].sample-yt-subtitle-webui .hero p,
+.theme-root[data-theme='dark'].sample-yt-subtitle-webui .field .hint,
+.theme-root[data-theme='dark'].sample-yt-subtitle-webui .modal-close{
+  color: #9ca3af;
+}
+
+.theme-root[data-theme='dark'].sample-yt-subtitle-webui .card,
+.theme-root[data-theme='dark'].sample-yt-subtitle-webui .modal-card{
+  background: #0b0b0b;
+  color: #f3f4f6;
+}
+
+.theme-root[data-theme='dark'].sample-yt-subtitle-webui .state-item,
+.theme-root[data-theme='dark'].sample-yt-subtitle-webui .modal-preview{
+  background: #111827;
+  border-color: #374151;
+}
+
+.theme-root[data-theme='dark'].sample-yt-subtitle-webui .field input,
+.theme-root[data-theme='dark'].sample-yt-subtitle-webui textarea{
+  background: #111827;
+  color: #f3f4f6;
+  border-color: #374151;
+}
+
+.theme-root[data-theme='dark'].sample-yt-subtitle-webui .status,
+.theme-root[data-theme='dark'].sample-yt-subtitle-webui .modal-close:hover{
+  color: #f9fafb;
+}
+
 /* Imported design sample: rich text editors */
 .sample-editor{
       --bg: #f6f7f9;
@@ -767,8 +803,43 @@
     .sample-editor .chip.is-ready{ background: var(--success-bg); border-color: var(--success-line); color: #067647; }
     .sample-editor .chip.is-error{ background: var(--error-bg); border-color: var(--error-line); color: #b42318; }
 
-    .sample-editor-soft{ --bg: #f3f4f6; }
-    .sample-editor-compact .editor-shell{ max-width: 1080px; }
+	    .sample-editor-soft{ --bg: #f3f4f6; }
+	    .sample-editor-compact .editor-shell{ max-width: 1080px; }
+
+	    .theme-root[data-theme='dark'].sample-editor{
+	      --bg: #000000;
+	      --panel: #111111;
+	      --line: #2b3444;
+	      --text: #f8fafc;
+	      --sub: #94a3b8;
+	      --primary-soft: #1e3a8a;
+	      --danger-soft: #3f1d1d;
+	      --success-bg: #0d2c1b;
+	      --success-line: #1f6f43;
+	      --error-bg: #3b1212;
+	      --error-line: #7f1d1d;
+	    }
+
+	    .theme-root[data-theme='dark'].sample-editor .sample-header,
+	    .theme-root[data-theme='dark'].sample-editor .card h2,
+	    .theme-root[data-theme='dark'].sample-editor .btn,
+	    .theme-root[data-theme='dark'].sample-editor button,
+	    .theme-root[data-theme='dark'].sample-editor .chip,
+	    .theme-root[data-theme='dark'].sample-editor .upload,
+	    .theme-root[data-theme='dark'].sample-editor .editor-box,
+	    .theme-root[data-theme='dark'].sample-editor .output-box,
+	    .theme-root[data-theme='dark'].sample-editor .preview-box,
+	    .theme-root[data-theme='dark'].sample-editor textarea,
+	    .theme-root[data-theme='dark'].sample-editor .preview,
+	    .theme-root[data-theme='dark'].sample-editor .state-card{
+	      background: #111111;
+	      color: #e5e7eb;
+	      border-color: #374151;
+	    }
+
+	    .theme-root[data-theme='dark'].sample-editor .editor-box{ background: linear-gradient(#121212, #0b0b0b); }
+	    .theme-root[data-theme='dark'].sample-editor .output-box.is-readonly,
+	    .theme-root[data-theme='dark'].sample-editor .editor-box.is-disabled{ background: #1f2937; color: #9ca3af; }
 /* Imported design sample: memo-pwa */
 .sample-memo-pwa{
   color-scheme: light;
@@ -1113,6 +1184,47 @@
 .sample-memo-pwa .history-item-error{
   border: 1px solid #fecaca;
   background: #fef2f2;
+}
+
+.theme-root[data-theme='dark'].sample-memo-pwa{
+  color-scheme: dark;
+  background: #000;
+  color: #f3f4f6;
+}
+
+.theme-root[data-theme='dark'].sample-memo-pwa header,
+.theme-root[data-theme='dark'].sample-memo-pwa aside,
+.theme-root[data-theme='dark'].sample-memo-pwa .editor,
+.theme-root[data-theme='dark'].sample-memo-pwa .state-showcase{
+  background: #0f1115;
+}
+
+.theme-root[data-theme='dark'].sample-memo-pwa .api-config,
+.theme-root[data-theme='dark'].sample-memo-pwa #sync-status,
+.theme-root[data-theme='dark'].sample-memo-pwa .search-field label,
+.theme-root[data-theme='dark'].sample-memo-pwa .search-toggle,
+.theme-root[data-theme='dark'].sample-memo-pwa #search-status,
+.theme-root[data-theme='dark'].sample-memo-pwa .state-row{
+  color: #9ca3af;
+}
+
+.theme-root[data-theme='dark'].sample-memo-pwa .api-config input,
+.theme-root[data-theme='dark'].sample-memo-pwa .search-field input,
+.theme-root[data-theme='dark'].sample-memo-pwa #memo-title,
+.theme-root[data-theme='dark'].sample-memo-pwa #memo-content,
+.theme-root[data-theme='dark'].sample-memo-pwa .search-replace,
+.theme-root[data-theme='dark'].sample-memo-pwa .history,
+.theme-root[data-theme='dark'].sample-memo-pwa .history-item,
+.theme-root[data-theme='dark'].sample-memo-pwa .memo-item,
+.theme-root[data-theme='dark'].sample-memo-pwa .memo-item.active,
+.theme-root[data-theme='dark'].sample-memo-pwa button.subtle:hover{
+  background: #111827;
+  color: #f3f4f6;
+  border-color: #374151;
+}
+
+.theme-root[data-theme='dark'].sample-memo-pwa .design-sample{
+  background: linear-gradient(180deg, #030712 0%, #111827 40%, #000000 100%);
 }
 
 @media (max-width: 900px){
@@ -1532,11 +1644,30 @@
         background: rgba(255, 255, 255, 0.5);
       }
 
-      .sample-js-format .stateLabel{
-        margin-bottom: 10px;
-        font-size: 12px;
-        color: var(--muted);
-      }
+.sample-js-format .stateLabel{
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.theme-root[data-theme='dark'].sample-js-format{
+  color-scheme: dark;
+  --bg: #000000;
+  --card: #0b0f14;
+  --surface: rgba(148, 163, 184, 0.08);
+  --surface-strong: rgba(148, 163, 184, 0.14);
+  --input-bg: rgba(15, 23, 42, 0.9);
+  --status-bg: rgba(148, 163, 184, 0.12);
+  --text: #f8fafc;
+  --muted: #94a3b8;
+  --border: rgba(148, 163, 184, 0.28);
+  --accent-1: rgba(30, 64, 175, 0.35);
+  --accent-2: rgba(194, 65, 12, 0.25);
+}
+
+.theme-root[data-theme='dark'].sample-js-format .stateBox{
+  background: rgba(15, 23, 42, 0.4);
+}
 /* Imported design sample: aont.github.io design-samples */
 .sample-aont-design{
   color-scheme: light dark;
