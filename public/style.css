@@ -418,3 +418,34 @@
 .status-box.error {
   border-color: var(--failure);
 }
+
+.state-grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.state-grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.state-grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.button-block {
+  width: 100%;
+}
+
+.log-panel {
+  border: 1px solid var(--input-border);
+  border-radius: 10px;
+  padding: 0.8rem;
+  background: var(--logs-bg);
+  box-shadow: var(--logs-shadow);
+}
+
+.log-panel .logs-pre {
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}

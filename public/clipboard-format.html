@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clipboard Processor (Static Design)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="theme-root page-body">
+  <main class="page-main">
+    <header class="page-header">
+      <div>
+        <h1 class="page-title">Clipboard Processor</h1>
+        <p class="subtle">クリップボードの整形ツール画面を、JavaScript なしの静的デザインとして再現したプレビューです。</p>
+      </div>
+      <span class="ui-badge" aria-label="Visual style">
+        <span class="ui-dot" aria-hidden="true"></span>
+        Static UI Preview
+      </span>
+    </header>
+
+    <div class="preview-grid preview-grid-split">
+      <section class="preview-card" aria-labelledby="overview-title">
+        <div class="preview-card-header">
+          <h2 class="preview-card-title" id="overview-title">Overview</h2>
+        </div>
+        <div class="preview-card-body preview-stack-md">
+          <p class="subtle">Reads clipboard text, converts line breaks into <code>&lt;div&gt;</code> based HTML, and writes both <code>text/plain</code> and <code>text/html</code>.</p>
+          <div class="state-grid state-grid-2">
+            <p class="status-box">Chars: -</p>
+            <p class="status-box">Chars: 184</p>
+            <p class="status-box">Device: Desktop</p>
+            <p class="status-box">Device: Mobile</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="preview-card" aria-labelledby="preset-title">
+        <div class="preview-card-header">
+          <h2 class="preview-card-title" id="preset-title">Preset Selection</h2>
+        </div>
+        <div class="preview-card-body preview-stack-md">
+          <div class="field-group">
+            <label class="form-label" for="preset_default">HTML preset (default)</label>
+            <select class="form-select" id="preset_default">
+              <option selected>DIV + sans-serif</option>
+              <option>OLK Style</option>
+            </select>
+          </div>
+          <div class="field-group">
+            <label class="form-label" for="preset_olk">HTML preset (olk)</label>
+            <select class="form-select" id="preset_olk">
+              <option>DIV + sans-serif</option>
+              <option selected>OLK Style</option>
+            </select>
+          </div>
+          <div class="state-grid state-grid-2">
+            <p class="status-box">Badge: default</p>
+            <p class="status-box success">Badge: olk</p>
+          </div>
+          <p class="subtle">選択した preset によって <code>toHtml()</code> の改行変換ルールが変わる想定です。</p>
+        </div>
+      </section>
+
+      <section class="preview-card" aria-labelledby="theme-title">
+        <div class="preview-card-header">
+          <h2 class="preview-card-title" id="theme-title">Theme Selection</h2>
+        </div>
+        <div class="preview-card-body preview-stack-md">
+          <div class="field-group">
+            <label class="form-label" for="theme_light">Theme (light)</label>
+            <select class="form-select" id="theme_light">
+              <option selected>Light</option>
+              <option>Dark</option>
+            </select>
+          </div>
+          <div class="field-group">
+            <label class="form-label" for="theme_dark">Theme (dark)</label>
+            <select class="form-select" id="theme_dark">
+              <option>Light</option>
+              <option selected>Dark</option>
+            </select>
+          </div>
+          <div class="state-grid state-grid-2">
+            <p class="status-box">Theme badge: light</p>
+            <p class="status-box success">Theme badge: dark</p>
+          </div>
+          <p class="subtle">テーマは UI 表示のみを変え、出力フォーマットには影響しない想定です。</p>
+        </div>
+      </section>
+
+      <section class="preview-card" aria-labelledby="actions-title">
+        <div class="preview-card-header">
+          <h2 class="preview-card-title" id="actions-title">Action & Status</h2>
+        </div>
+        <div class="preview-card-body preview-stack-md">
+          <div class="state-grid state-grid-2">
+            <button type="button" class="button button-block">Format and overwrite clipboard</button>
+            <button type="button" class="button button-block" disabled>Processing…</button>
+          </div>
+
+          <div class="state-grid state-grid-3">
+            <p class="status-box">Idle</p>
+            <p class="status-box success">Done</p>
+            <p class="status-box error">Failed</p>
+            <p class="status-box">Clipboard is empty</p>
+            <p class="status-box">No text found in clipboard</p>
+            <p class="status-box error">Clipboard API is not available</p>
+          </div>
+
+          <div class="state-grid state-grid-2">
+            <button type="button" class="button secondary button-block">Clear log</button>
+            <button type="button" class="button secondary button-block" disabled>Clear log (disabled)</button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="preview-card" aria-labelledby="log-title">
+      <div class="preview-card-header">
+        <h2 class="preview-card-title" id="log-title">Log Variants</h2>
+      </div>
+      <div class="preview-card-body">
+        <div class="preview-grid preview-grid-split">
+          <article class="log-panel" aria-label="Normal log">
+            <p class="status-box">Normal Log</p>
+            <pre class="logs-pre">[2026-01-05 09:12:10] Ready. Tap the button to process the clipboard.
+[2026-01-05 09:12:18] Input detected (184 characters)
+[2026-01-05 09:12:19] HTML generated with preset: sansDiv
+[2026-01-05 09:12:19] Clipboard write completed (text/plain + text/html)</pre>
+          </article>
+          <article class="log-panel" aria-label="Error log">
+            <p class="status-box error">Error Log</p>
+            <pre class="logs-pre">[2026-01-05 09:15:41] Processing started
+[2026-01-05 09:15:42] Error: Clipboard API is not available.
+[2026-01-05 09:15:42] Hint: Some browsers may restrict writing HTML.</pre>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
