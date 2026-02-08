@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ja">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,7 +11,7 @@
     <header class="page-header">
       <div>
         <h1 class="page-title">ChatGPT Prompt Template Insert Bookmarklet Generator</h1>
-        <p class="subtle">Prompt テンプレートを貼り付け、ブックマークレットを生成して、ブックマークバーへドラッグするための静的デザインです。</p>
+        <p class="subtle">This is a static design for pasting a prompt template, generating a bookmarklet, and dragging it to the bookmarks bar.</p>
       </div>
       <span class="ui-badge" aria-label="Visual style">
         <span class="ui-dot" aria-hidden="true"></span>
@@ -26,10 +26,10 @@
         </div>
         <div class="preview-card-body">
           <label class="form-label" for="input_text">Input Prompt Template</label>
-          <textarea class="form-textarea" id="input_text" placeholder="Input Prompt Template Here">あなたはプロの編集者です。
-以下の文章を校正してください。
+          <textarea class="form-textarea" id="input_text" placeholder="Input Prompt Template Here">You are a professional editor.
+Please proofread the text below.
 
-出力は箇条書きでお願いします。</textarea>
+Please output the results as bullet points.</textarea>
 
           <div class="toggle-group">
             <button type="button" class="button">Generate Bookmarklet</button>
@@ -37,7 +37,7 @@
             <button type="button" class="button" disabled>Generating…</button>
           </div>
 
-          <p class="subtle">Tip: 改行ごとに ChatGPT 入力欄へ段落として挿入されます。</p>
+          <p class="subtle">Tip: Each line break is inserted as a separate paragraph in the ChatGPT input field.</p>
 
           <div class="preview-stack-sm" aria-label="Status variants">
             <p class="status-box">Status: Waiting for input.</p>
@@ -65,7 +65,7 @@
             <textarea class="form-textarea" id="output_text" readonly>javascript:!async%20function()%7B%2F*%20generated%20bookmarklet%20url%20preview%20*%2F%7D()%3B</textarea>
           </div>
 
-          <p class="subtle">Bookmarklet が動作しない場合は、ChatGPT ページ上で入力欄 <code>#prompt-textarea</code> が存在することを確認してください。</p>
+          <p class="subtle">If the bookmarklet does not work, make sure the input field <code>#prompt-textarea</code> exists on the ChatGPT page.</p>
         </div>
       </section>
     </div>

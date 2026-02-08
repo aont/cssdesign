@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ja">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,7 +11,7 @@
     <header class="page-header">
       <div>
         <h1 class="page-title">JavaScript Minify / Format Tool</h1>
-        <p class="subtle">https://aont.github.io/js-format/index.html を JavaScript なしの静的プレビューとして再構成しています。</p>
+        <p class="subtle">This is a static preview reconstruction of https://aont.github.io/js-format/index.html without JavaScript.</p>
       </div>
       <span class="ui-badge" aria-label="Visual style">
         <span class="ui-dot" aria-hidden="true"></span>
@@ -38,7 +38,7 @@
             <button type="button" class="button button-danger" disabled>Clear</button>
           </div>
         </div>
-        <p class="subtle">有効/無効状態を同時表示しています。</p>
+        <p class="subtle">Enabled and disabled states are shown side by side.</p>
       </div>
     </section>
 
@@ -56,13 +56,13 @@
                 <button type="button" class="button secondary">Copy</button>
               </div>
             </div>
-            <label class="form-label" for="input_js">入力済み</label>
+            <label class="form-label" for="input_js">Filled</label>
             <textarea id="input_js" class="form-textarea form-textarea-compact">(() => {
   const target = document.querySelector('#app');
   if (!target) return;
   target.textContent = 'hello world';
 })();</textarea>
-            <label class="form-label" for="input_blank">未入力</label>
+            <label class="form-label" for="input_blank">Empty</label>
             <textarea id="input_blank" class="form-textarea form-textarea-compact" placeholder="Paste JavaScript here..."></textarea>
           </article>
 
@@ -74,9 +74,9 @@
                 <button type="button" class="button secondary">Select</button>
               </div>
             </div>
-            <label class="form-label" for="output_js">生成済み</label>
+            <label class="form-label" for="output_js">Generated</label>
             <textarea id="output_js" class="form-textarea form-textarea-compact">(()=>{const e=document.querySelector("#app");e&&(e.textContent="hello world")})();</textarea>
-            <label class="form-label" for="output_blank">未生成</label>
+            <label class="form-label" for="output_blank">Not Generated</label>
             <textarea id="output_blank" class="form-textarea form-textarea-compact" placeholder="Minified code will appear here..."></textarea>
           </article>
         </div>
