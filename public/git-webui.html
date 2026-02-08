@@ -4,7 +4,71 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>UI Components Design Sample</title>
-  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style type="text/tailwindcss">
+    @layer base {
+      body { @apply bg-slate-100 text-slate-900 antialiased m-0 p-6; }
+      a { @apply text-blue-600 underline-offset-2 hover:underline; }
+      code, kbd, pre { @apply font-mono; }
+      kbd { @apply rounded border border-slate-300 bg-slate-100 px-1.5 py-0.5 text-xs; }
+    }
+    @layer components {
+      .page-main { @apply mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white p-6 shadow-lg md:p-8; }
+      .page-title { @apply text-2xl font-bold tracking-tight; }
+      .page-header, .panel-header-inline, .field-header, .meta-row { @apply flex flex-wrap items-center justify-between gap-3; }
+      .theme-toggle-row { @apply mb-4 flex justify-end; }
+      .subtle, .hint-line { @apply text-sm text-slate-500; }
+      .preview-grid, .design-form, .preview-stack-sm, .preview-stack-md, .state-grid, .item-list { @apply grid; }
+      .preview-stack-sm { @apply gap-2; }
+      .preview-stack-md, .preview-grid, .design-form { @apply gap-4; }
+      .preview-grid-split { @apply grid-cols-1 lg:grid-cols-2; }
+      .preview-card, .surface-card, .memo-pane, .tool-surface { @apply rounded-xl border border-slate-200 bg-white p-4 shadow-sm; }
+      .preview-card-header { @apply pb-2; }
+      .preview-card-body { @apply space-y-4; }
+      .preview-card-title, .section-heading { @apply text-xs font-semibold uppercase tracking-wide text-slate-500; }
+      .section-title, .section-subtitle { @apply text-lg font-semibold; }
+      .form-label { @apply mb-2 block text-sm font-semibold text-slate-700; }
+      .form-input-text, .form-textarea, .form-select, .form-input-number { @apply w-full rounded-lg border border-slate-300 bg-white px-3 py-2 font-mono text-sm shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200; }
+      .form-textarea { @apply min-h-[180px]; }
+      .form-textarea-compact, .editor-surface-compact { @apply min-h-[120px]; }
+      .button { @apply inline-flex items-center justify-center rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50; }
+      .button.secondary { @apply bg-slate-700 hover:bg-slate-800; }
+      .button-danger { @apply bg-rose-600 hover:bg-rose-700; }
+      .button-link, .button-link:visited { @apply text-white no-underline; }
+      .button-block { @apply w-full; }
+      .button-sm { @apply px-3 py-1.5 text-xs; }
+      .toggle-group, .toolbar-row, .field-header-actions, .modal-actions, .rich-toolbar, .action-toolbar { @apply flex flex-wrap items-center gap-2; }
+      .action-toolbar, .toolbar-chip, .ui-pill, .bookmarklet-line-static { @apply rounded-lg border border-slate-200 bg-slate-50 p-3; }
+      .status-box, .toast-banner { @apply rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-600; }
+      .status-box.success { @apply border-emerald-300 bg-emerald-50 text-emerald-700; }
+      .status-box.error { @apply border-rose-300 bg-rose-50 text-rose-700; }
+      .ui-badge, .status-pill { @apply inline-flex items-center gap-2 rounded-full border border-slate-300 bg-slate-50 px-3 py-1 text-xs text-slate-600; }
+      .status-pill.connected { @apply border-emerald-300 bg-emerald-50 text-emerald-700; }
+      .status-pill.error { @apply border-rose-300 bg-rose-50 text-rose-700; }
+      .ui-dot { @apply h-2 w-2 rounded-full bg-blue-600; }
+      .state-grid-2 { @apply grid-cols-1 md:grid-cols-2; }
+      .state-grid-3 { @apply grid-cols-1 md:grid-cols-3; }
+      .logs, .log-panel, .modal-shell { @apply rounded-xl border border-slate-200 bg-slate-50 p-4; }
+      .logs-pre, .inline-code-block { @apply whitespace-pre-wrap break-words rounded-lg border border-slate-200 bg-white p-3 text-xs text-slate-700; }
+      .inline-code { @apply rounded bg-slate-100 px-1.5 py-0.5 text-xs; }
+      .hint-banner { @apply rounded-lg border border-amber-300 bg-amber-50 p-3 text-sm text-amber-900; }
+      .memo-layout { @apply grid grid-cols-1 gap-4 lg:grid-cols-3; }
+      .memo-layout > :last-child { @apply lg:col-span-2; }
+      .item-list { @apply list-none gap-2 p-0; }
+      .item-row { @apply rounded-lg border border-slate-200 bg-slate-50 p-3; }
+      .item-row.selected, .is-pressed { @apply ring-2 ring-blue-300; }
+      .editor-surface { @apply min-h-[220px] rounded-lg border border-slate-300 bg-white p-3 leading-relaxed; }
+      .control-row, .editor-header-row, .search-grid, .field-group, .field-group-wide { @apply grid gap-3; }
+      .control-row { @apply md:grid-cols-[auto_minmax(120px,1fr)_92px]; }
+      .editor-header-row { @apply md:grid-cols-[minmax(0,1fr)_auto_auto]; }
+      .search-grid { @apply md:grid-cols-3; }
+      .field-group { @apply md:grid-cols-2; }
+      .field-group-wide { @apply md:grid-cols-2 xl:grid-cols-3; }
+      .hidden { @apply hidden; }
+      .bookmarklet-link-static, .preview-link { @apply font-semibold text-blue-600; }
+      .bookmarklet-empty, .item-meta { @apply text-sm text-slate-500; }
+    }
+  </style>
 </head>
 <body class="theme-root page-body">
   <main class="page-main">
