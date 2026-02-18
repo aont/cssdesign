@@ -1,5 +1,5 @@
 const THEME_ATTRIBUTE = 'data-theme';
-const THEME_STORAGE_KEY = 'theme-preference';
+const THEME_STORAGE_KEY = 'cssdesign.themePreference';
 const themeToggleButton = document.querySelector('#theme_toggle');
 
 function applyThemePreference(themePreference) {
